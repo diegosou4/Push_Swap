@@ -1,31 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   ft_msgerror.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: diegmore <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/09 12:06:13 by diegmore          #+#    #+#             */
-/*   Updated: 2024/01/09 12:06:14 by diegmore         ###   ########.fr       */
+/*   Created: 2024/01/09 14:42:15 by diegmore          #+#    #+#             */
+/*   Updated: 2024/01/09 14:42:36 by diegmore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
-#include "./ext/libft/libft.h"
+#include "../push_swap.h"
 
 
-typedef struct  node
+int error_num(char *str)
 {
-    int num;
-    t_node next;
-    t_node previus;
-}       t_node;
-
-int check_numbers(int argc, char **argv);
-int check_float(char *str);
-
-
-// Messagens de Error
-int error_num(char *str);
-#endif
+    ft_printf("%s\n",str);
+    return(0);
+}

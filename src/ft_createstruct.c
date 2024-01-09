@@ -1,31 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   ft_createstruct.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: diegmore <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/09 12:06:13 by diegmore          #+#    #+#             */
-/*   Updated: 2024/01/09 12:06:14 by diegmore         ###   ########.fr       */
+/*   Created: 2024/01/09 14:33:38 by diegmore          #+#    #+#             */
+/*   Updated: 2024/01/09 14:33:39 by diegmore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
-#include "./ext/libft/libft.h"
+
+#include "../push_swap.h"
 
 
-typedef struct  node
+
+int    create_stack(int argc, char **argv, t_list *stacka, t_list *stackb)
 {
-    int num;
-    t_node next;
-    t_node previus;
-}       t_node;
+    int i;
 
-int check_numbers(int argc, char **argv);
-int check_float(char *str);
+    i = 1;
+
+    while(i < argc)
+    {
+
+    }
 
 
-// Messagens de Error
-int error_num(char *str);
-#endif
+}
