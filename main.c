@@ -16,12 +16,16 @@ int main(int argc, char **argv)
 {
     if(argc > 2)
     {
-        t_node stack_a;
-        t_node stack_b;
+        t_node *stack_a;
+        t_node *stack_b;
+        stack_a = NULL;
+        stack_b = NULL;
         int i;
         i = check_numbers(argc,argv);
         if(i == 1)
         {
+            create_stack(argc,argv,stack_a,stack_b);
+
             
         }
     }

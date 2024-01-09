@@ -52,10 +52,14 @@ LIBFT_SRC = ft_isalpha.c \
       ft_printp.c \
       ft_unsigned.c \
 
+
 PREFIX = ext/libft/
+SRC = ./src/ft_checkarg.c \
+	./src/ft_createstruct.c \
+	./src/ft_msgerror.c
 
 LIBFT = $(addprefix $(PREFIX),$(LIBFT_SRC))
 CC = cc
 CFLAGS = -Wall -Wextra -Werror
 all: 
-	$(CC) main.c -g $(CFLAGS) $(LIBFT) utils.c
+	$(CC) main.c -g  $(LIBFT) $(SRC)

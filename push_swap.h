@@ -11,16 +11,21 @@
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#define PUSH_SWAP_H
 #include "./ext/libft/libft.h"
 
 
-typedef struct  node
+typedef struct node
 {
     int num;
-    t_node next;
-    t_node previus;
-}       t_node;
+    int index;
+    struct node *next;
+    struct node *previous;
+} t_node;
+
+t_node* new_node(int num, int index);
+int    create_stack(int argc, char **argv, t_node *stacka, t_node *stackb);
+
 
 int check_numbers(int argc, char **argv);
 int check_float(char *str);
