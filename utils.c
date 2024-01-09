@@ -1,28 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: diegmore <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/09 12:06:13 by diegmore          #+#    #+#             */
-/*   Updated: 2024/01/09 12:06:14 by diegmore         ###   ########.fr       */
+/*   Created: 2024/01/09 13:06:11 by diegmore          #+#    #+#             */
+/*   Updated: 2024/01/09 13:06:13 by diegmore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
-#include "./extern/libft/libft.h"
+#include "push_swap.h"
 
-
-typedef struct s_stack
+int check_numbers(int argc, char **argv)
 {
-    int num;
-    t_stack next;
-    t_stack prev;
-}       t_stack;
+    int i;
 
-int check_numbers(int argc, char **argv);
+    i = 0;
+
+    while(i < argc - 1)
+    {
+        ft_printf("%i \n", ft_atoi(argv[i]));
+        i++;
+    }
+
+    return(1);
 
 
-#endif
+}

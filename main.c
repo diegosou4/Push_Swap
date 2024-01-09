@@ -10,10 +10,17 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "push_swap.h"
 
-int main()
+int main(int argc, char **argv)
 {
+    if(argc > 2)
+    {
+        int i;
 
+        i = check_numbers(argc,argv);
 
-    
+    }
+
+    return(0);
 }
