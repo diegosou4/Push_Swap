@@ -1,6 +1,6 @@
 NAME = push_swap
 
-LIBFT = ft_isalpha.c \
+LIBFT_SRC = ft_isalpha.c \
       ft_isdigit.c \
       ft_isalnum.c \
       ft_isascii.c \
@@ -36,7 +36,7 @@ LIBFT = ft_isalpha.c \
       ft_striteri.c \
       ft_itoa.c \
       ft_split.c \
-	  ft_lstnew.c \
+      ft_lstnew.c \
       ft_lstsize.c \
       ft_lstlast.c \
       ft_lstadd_back.c \
@@ -46,10 +46,19 @@ LIBFT = ft_isalpha.c \
       ft_lstdelone.c \
       ft_lstclear.c \
       ft_lstmap.c \
-	  ft_print.c  \
-	  ft_putstr.c \
-	  ft_hexdec.c \
-	  ft_putchar.c \
-	  ft_printp.c \
-	  ft_unsigned.c \
+      ft_printc.c  \
+	  ft_printf.c \
+	  ft_putnbr.c \
+      ft_putstr.c \
+      ft_hexdec.c \
+      ft_putchar.c \
+      ft_printp.c \
+      ft_unsigned.c \
 
+PREFIX = ext/libft/
+
+LIBFT = $(addprefix $(PREFIX),$(LIBFT_SRC))
+CC = cc
+CFLAGS = -Wall -Wextra -Werror
+all: 
+	$(CC) main.c -g $(CFLAGS) $(LIBFT) utils.c

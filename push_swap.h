@@ -12,15 +12,10 @@
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
-#include "./extern/libft/libft.h"
+#include "./ext/libft/libft.h"
 
 
-typedef struct s_stack
-{
-    int num;
-    t_stack next;
-    t_stack prev;
-}       t_stack;
+
 
 int check_numbers(int argc, char **argv);
 
