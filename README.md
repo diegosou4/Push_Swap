@@ -1,1 +1,83 @@
-# Push_Swap
+
+
+
+# PUSH_SA
+# PUSH_SB
+# PUSH_SS
+## Exemplo
+
+1                2
+2                1
+3                3   
+STACK_A         STACK_A
+
+1                2
+2                1
+3                3   
+STACK_B         STACK_B
+
+
+## Ela troca os dois primeiros numeros de ordem sendo o que o segundo vai para o topo da lista
+## E o primeiro vai para a segunda posicao, enquanto o terceiro nao muda de lugar
+## Troca feita na mesma Stack
+## PUSH_SS vai executar a SA E SB AO MESMO TEMPO
+
+# PUSH_RA
+# PUSH_RB
+# PUSH_RR
+## Exemplo
+
+1                2
+2                3
+3                1
+STACK_A         STACK_A
+
+1                2
+2                3
+3                1
+STACK_B         STACK_B
+
+## O numero do topo vai para o final da da lista
+## O Segundo assume a posicao anterior do primeiro
+## E o terceiro assume a posicao do anterior do segundo
+## PUSH_RR vai executar a RA E RB AO MESMO TEMPO
+
+
+# PUSH_RRA
+# PUSH_RRB
+# PUSH_RRR
+## EXEMPLO
+
+1                3
+2                1
+3                2
+STACK_A         STACK_A
+
+1                3
+2                1
+3                2
+STACK_B         STACK_B
+
+## O numero do final vai para o topo do lista
+## O PRIMEIRO ASSUME O LUGAR DO SEGUNDO
+## E O SEGUNDO ASSUME O LUGAR ANTERIOR DO TERCEIRO
+## PUSH_RRR vai executar RRA E RRB AO MESMO TEMPO
+
+# PUSH_PA
+# PUSH_PB
+
+    <----------
+1              \ 8
+2                9
+3                10
+STACK_A         STACK_B
+    ---------->
+1 /              8
+2                9
+3                10
+STACK_A         STACK_B
+
+## O PA envia o primeiro numero da lista da STACK B
+## para STACK A
+## O PB envia o primeiro numero da lista da STACK A
+## para STACK B
