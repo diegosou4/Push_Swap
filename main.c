@@ -12,23 +12,14 @@
 
 #include "push_swap.h"
 
-int main(int argc, char **argv)
+int main(int ac, char **av)
 {
-    if(argc > 2)
-    {
-        t_node *stack_a;
-        t_node *stack_b;
-        stack_a = NULL;
-        stack_b = NULL;
-        int i;
-        i = check_numbers(argc,argv);
-        if(i == 1)
-        {
-            create_stack(argc,argv,stack_a,stack_b);
+    int i;
+    if(ac < 2)
+        return(0);
+    i = check_arg(ac,av);
+    t_node *stacka;
 
-            
-        }
-    }
-
+    stacka = save_values(ac,av);
     return(0);
 }

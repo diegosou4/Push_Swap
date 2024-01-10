@@ -25,11 +25,21 @@ typedef struct node
 
 t_node* new_node(int num, int index);
 int    create_stack(int argc, char **argv, t_node *stacka, t_node *stackb);
+void add_back(t_node **node,int num, int index);
 
-
+int	free_struct(t_node *node);
+int check_arg(int ac,char **av);
 int check_numbers(int argc, char **argv);
 int check_float(char *str);
 
+
+// ARG " "
+int check_num(char **num);
+t_node* save_values(int ac,char **av);
+
+// FREE
+void free_array(char **num);
+void return_free(char **num, void type);
 
 // Messagens de Error
 int error_num(char *str);

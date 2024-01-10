@@ -17,6 +17,8 @@
 t_node* new_node(int num, int index)
 {
     t_node *node = malloc (sizeof(t_node));
+    if(!node)
+        return(NULL);
     node->num = num;
     node->index = index;
     node->next = NULL;
@@ -24,6 +26,20 @@ t_node* new_node(int num, int index)
     return(node);
 }
 
+void add_back(t_node **node,int num, int index)
+{   
+    t_node *last;
+    t_node *pnode;
+    pnode = *node;
+    last = new_node(num, index);
+    while(pnode->next)
+    {
+        pnode = pnode->next;
+    }
+    last->previous = pnode;
+    pnode->next = last;
+
+}
 
 int    create_stack(int argc, char **argv, t_node *stacka, t_node *stackb)
 {
@@ -40,5 +56,15 @@ int    create_stack(int argc, char **argv, t_node *stacka, t_node *stackb)
     stacka->previous = stacka;
     ft_printf("%i : valor %i : index \n", stacka->num, stacka->index);
     ft_printf("%i : valor %i : index \n", stacka->next->num, stacka->next->index);
+    add_back(&stacka, ft_atoi(argv[3]), 2);
+    t_node *pnode;
+    pnode = stacka;
+    while(pnode->next)
+    {
+        pnode = pnode->next;
+    }
+    ft_printf("%i : valor %i index \n", pnode->num, pnode->index);
+
+    free_struct(stacka);
 
 }

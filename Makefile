@@ -56,7 +56,8 @@ LIBFT_SRC = ft_isalpha.c \
 PREFIX = ext/libft/
 SRC = ./src/ft_checkarg.c \
 	./src/ft_createstruct.c \
-	./src/ft_msgerror.c
+	./src/ft_msgerror.c \
+	./src/ft_free.c 
 
 LIBFT = $(addprefix $(PREFIX),$(LIBFT_SRC))
 CC = cc
