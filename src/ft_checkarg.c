@@ -77,32 +77,31 @@ int	check_num(char **num, int index)
 
 t_node	*value_av(int ac, char **av)
 {
-	int i;
 	t_node *stacka;
-	i = 0;
-
-	i = check_num(av,1);
-	if (i == 0)
+	if (check_num(av,1) == 0 || check_duplicates(av,1) == 0 || check_nvalues(av,1) == 0)
 	{
 		return (NULL);
 	}
-	i = check_duplicates(av,1);
     stacka = create_stack(av,1);
-
 }
 
 t_node *value_arr(int ac,char **av)
 {
 	char **num;
 	t_node *stacka;
-	int i;
-	i = 0;
 	num = ft_split(av[1], ' ');
-	i = check_num(num,0);
-	if(i == 0)
+	if(check_num(num,0) == 0 || check_duplicates(num,0) == 0 || check_nvalues(num,0) == 0)
 	{
 		return((t_node *)return_free(num,NULL));
 	}
-	i = check_duplicates(num,0);
 	stacka = create_stack(num,0);
 }
+/*
+
+"--123"
+0
+"0"
+
+"--123" == "0"
+
+*/

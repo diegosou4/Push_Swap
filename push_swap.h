@@ -41,6 +41,8 @@ int len_darray(char **num);
 int check_duplicates(char **num, int index);
 // ARG " "
 
+
+int check_nvalues(char **num, int index);
 int	check_num(char **num, int index);
 t_node* save_values(int ac,char **av);
 

@@ -34,3 +34,22 @@ int check_duplicates(char **num, int index)
     }
     return(1);
 }
+
+int check_nvalues(char **num, int index)
+{
+    char *curr;
+
+    while(num[index])
+    {
+        curr = ft_itoa(ft_atoi(num[index]));
+        if(ft_strncmp(num[index],curr, ft_strlen(num[index])))
+        {
+            free(curr);
+            ft_printf("Error \n");
+            return(0);
+        }
+        free(curr);
+        index++;
+    }
+    return(1);
+}
