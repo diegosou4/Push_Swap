@@ -23,8 +23,11 @@ typedef struct node
     struct node *previous;
 } t_node;
 
+
+t_node	*value_av(int ac, char **av);
+t_node *value_arr(int ac,char **av);
+t_node *create_stack(char **num, int index);
 t_node* new_node(int num, int index);
-t_node *create_stack(char **num);
 void add_back(t_node **node,int num, int index);
 
 int	free_struct(t_node *node);

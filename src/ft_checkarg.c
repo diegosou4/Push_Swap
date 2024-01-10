@@ -46,10 +46,17 @@ int	check_numbers(int argc, char **argv)
 
 int	check_arg(int ac, char **av)
 {
+	t_node *stacka;
 	if (ac == 2)
+	{
+		stacka = value_av(ac,av);
 		return (1);
+	}
 	if (ac > 2)
+	{
+		stacka = value_arr(ac,av);
 		return (2);
+	}
 	return (0);
 }
 int	check_num(char **num)
@@ -72,18 +79,32 @@ int	check_num(char **num)
 	return (1);
 }
 
-t_node	*save_values(int ac, char **av)
+t_node	*value_av(int ac, char **av)
 {
-	char **num;
 	int i;
 	t_node *stacka;
 	i = 0;
-	num = ft_split(av[1], ' ');
-	i = check_num(num);
+
+	i = check_num(av);
 	if (i == 0)
 	{
-		return ((t_node *)return_free(num, NULL));
+		return (NULL);
 	}
-    stacka = create_stack(num);
+    stacka = create_stack(av,1);
 
+}
+
+t_node *value_arr(int ac,char **av)
+{
+	char **num;
+	t_node *stacka;
+	int i;
+	i = 0;
+	num = ft_split(av[1], ' ');
+	i = check_num(num);
+	if(i == 0)
+	{
+		return((t_node *)return_free(num,NULL));
+	}
+	stacka = create_stack(num,0);
 }

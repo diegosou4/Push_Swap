@@ -41,14 +41,13 @@ void	add_back(t_node **node, int num, int index)
 	pnode->next = last;
 }
 /*
-int	create_stack(int argc, char **argv, t_node *stacka, t_node *stackb)
+t_node*	create_stack2(int argc, char **argv)
 {
 	int i;
 	int num;
 
 	i = 2;
-	if (argc == 1)
-		return (0);
+
 	num = ft_atoi(argv[1]);
 	stacka = new_node(num, 0);
 	num = ft_atoi(argv[2]);
@@ -67,14 +66,12 @@ int	create_stack(int argc, char **argv, t_node *stacka, t_node *stackb)
 	ft_printf("%i : valor %i index \n", pnode->num, pnode->index);
 
 	free_struct(stacka);
-}*/
+} */
 
 
-t_node *create_stack(char **num)
+t_node *create_stack(char **num, int index)
 {
     int lenarr;
-    int index;
-    index = 0;
     lenarr = len_darray(num);
     t_node *stacka;
 
@@ -93,6 +90,8 @@ t_node *create_stack(char **num)
 		printf("Numero %i Index %i \n", pstack->num,pstack->index);
 		pstack = pstack->next;
 	}
+	if(pstack->previous != NULL)
+		printf("Numero %i Index %i \n", pstack->num,pstack->index);
     return(stacka);
 
 
