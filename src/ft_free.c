@@ -14,44 +14,37 @@
 
 int	free_struct(t_node *node)
 {
-	t_node *pnode;
+	t_node	*pnode;
 
-    pnode = node;
-
-    while(pnode->next)
-    {
-        pnode = pnode->next;
-    }
-    while(pnode->previous)
-    {
-        free(pnode);
-        pnode = pnode->previous;
-    }
-    free(pnode);
-    return(1);
+	pnode = node;
+	while (pnode->next)
+	{
+		pnode = pnode->next;
+	}
+	while (pnode->previous)
+	{
+		free(pnode);
+		pnode = pnode->previous;
+	}
+	free(pnode);
+	return (1);
 }
 
-
-
-void free_array(char **num)
+void	free_array(char **num)
 {
-    int lenarr;
-    lenarr = 0;
+	int	lenarr;
 
-    while (num[lenarr])
-        lenarr++;
-    lenarr--;
-    while (lenarr != 0)
-    {
-        free(num[lenarr]);
-        lenarr--;
-    }
-    free(num);
+	lenarr = (len_darray(num) - 1);
+	while (lenarr != 0)
+	{
+		free(num[lenarr]);
+		lenarr--;
+	}
+	free(num);
 }
 
-
-void return_free(char **num, void type)
+void	*return_free(char **num, void *type)
 {
-    free_array(num);
-    return(0);
+	free_array(num);
+	return (type);
 }

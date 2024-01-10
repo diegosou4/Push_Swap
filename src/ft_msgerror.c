@@ -12,9 +12,8 @@
 
 #include "../push_swap.h"
 
-
-int error_num(char *str)
+int	error_num(char *str)
 {
-    ft_printf("%s\n",str);
-    return(0);
+	ft_printf("%s\n", str);
+	return (0);
 }
