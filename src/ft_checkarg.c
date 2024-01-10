@@ -44,37 +44,33 @@ int	check_numbers(int argc, char **argv)
 	return (1);
 }
 
-int	check_arg(int ac, char **av)
+int	check_arg(int ac, char **av, t_node *stacka)
 {
-	t_node *stacka;
 	if (ac == 2)
 	{
-		stacka = value_av(ac,av);
+		stacka = value_arr(ac,av);
 		return (1);
 	}
 	if (ac > 2)
 	{
-		stacka = value_arr(ac,av);
+		stacka = value_av(ac,av);
 		return (2);
 	}
 	return (0);
 }
-int	check_num(char **num)
+int	check_num(char **num, int index)
 {
-	int	i;
 	int	j;
-
-	i = 0;
-	while (num[i])
+	while (num[index])
 	{
 		j = 0;
-		while (num[i][j])
+		while (num[index][j])
 		{
-			if (ft_isdigit(num[i][j]) == 0)
+			if (ft_isdigit(num[index][j]) == 0)
 				return (error_num("!!!Error Digite apenas numeros!!!"));
 			j++;
 		}
-		i++;
+		index++;
 	}
 	return (1);
 }
@@ -85,11 +81,12 @@ t_node	*value_av(int ac, char **av)
 	t_node *stacka;
 	i = 0;
 
-	i = check_num(av);
+	i = check_num(av,1);
 	if (i == 0)
 	{
 		return (NULL);
 	}
+	i = check_duplicates(av,1);
     stacka = create_stack(av,1);
 
 }
@@ -101,10 +98,11 @@ t_node *value_arr(int ac,char **av)
 	int i;
 	i = 0;
 	num = ft_split(av[1], ' ');
-	i = check_num(num);
+	i = check_num(num,0);
 	if(i == 0)
 	{
 		return((t_node *)return_free(num,NULL));
 	}
+	i = check_duplicates(num,0);
 	stacka = create_stack(num,0);
 }

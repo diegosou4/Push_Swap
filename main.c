@@ -15,11 +15,11 @@
 int	main(int ac, char **av)
 {
 	int i;
+	t_node *stacka;
+	t_node *stackb;
 	if (ac < 2)
 		return (0);
-	i = check_arg(ac, av);
-	t_node *stacka;
+	i = check_arg(ac, av,stacka);
 
-	stacka = save_values(ac, av);
 	return (0);
 }

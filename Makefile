@@ -58,7 +58,8 @@ SRC = ./src/ft_checkarg.c \
 	./src/ft_createstruct.c \
 	./src/ft_msgerror.c \
 	./src/ft_free.c \
-      ./src/ft_utils.c
+      ./src/ft_utils.c \
+      ./src/ft_checknum.c
 
 LIBFT = $(addprefix $(PREFIX),$(LIBFT_SRC))
 CC = cc

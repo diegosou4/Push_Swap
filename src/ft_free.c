@@ -34,8 +34,8 @@ void	free_array(char **num)
 {
 	int	lenarr;
 
-	lenarr = (len_darray(num) - 1);
-	while (lenarr != 0)
+	lenarr = (len_darray(num));
+	while (lenarr != -1)
 	{
 		free(num[lenarr]);
 		lenarr--;

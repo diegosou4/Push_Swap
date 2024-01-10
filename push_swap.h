@@ -31,16 +31,17 @@ t_node* new_node(int num, int index);
 void add_back(t_node **node,int num, int index);
 
 int	free_struct(t_node *node);
-int check_arg(int ac,char **av);
+int	check_arg(int ac, char **av, t_node *stacka);
 int check_numbers(int argc, char **argv);
 int check_float(char *str);
 
 
 // Arr
 int len_darray(char **num);
-
+int check_duplicates(char **num, int index);
 // ARG " "
-int check_num(char **num);
+
+int	check_num(char **num, int index);
 t_node* save_values(int ac,char **av);
 
 // FREE

@@ -74,12 +74,15 @@ t_node *create_stack(char **num, int index)
     int lenarr;
     lenarr = len_darray(num);
     t_node *stacka;
-
-    stacka = new_node(ft_atoi(num[index]), index);
+	int i;
+	i = 0;
+    stacka = new_node(ft_atoi(num[index]), i);
     index++;
+	i++;
     while(index != lenarr)
     {
-        add_back(&stacka,ft_atoi(num[index]),index);
+        add_back(&stacka,ft_atoi(num[index]),i);
+		i++;
         index++;
     }
 	t_node *pstack;
@@ -93,6 +96,4 @@ t_node *create_stack(char **num, int index)
 	if(pstack->previous != NULL)
 		printf("Numero %i Index %i \n", pstack->num,pstack->index);
     return(stacka);
-
-
 }
