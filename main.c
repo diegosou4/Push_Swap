@@ -6,7 +6,7 @@
 /*   By: diemorei <diemorei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/09 12:06:21 by diegmore          #+#    #+#             */
-/*   Updated: 2024/01/15 13:28:03 by diemorei         ###   ########.fr       */
+/*   Updated: 2024/01/15 14:14:23 by diemorei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,6 @@ int	main(int ac, char **av)
 	stackb = NULL;
 	if (ac < 2)
 		return (0);
-	i = check_arg(ac, av,stacka);
-
+	i = check_arg(ac, av,&stacka);
 	return (0);
 }

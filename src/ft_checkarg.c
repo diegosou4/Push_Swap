@@ -6,7 +6,7 @@
 /*   By: diemorei <diemorei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/09 13:06:11 by diegmore          #+#    #+#             */
-/*   Updated: 2024/01/15 13:30:33 by diemorei         ###   ########.fr       */
+/*   Updated: 2024/01/15 14:17:54 by diemorei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,16 +44,16 @@ int	check_numbers(int argc, char **argv)
 	return (1);
 }
 
-int	check_arg(int ac, char **av, t_node *stacka)
+int	check_arg(int ac, char **av, t_node **stacka)
 {
 	if (ac == 2)
 	{
-		stacka = value_arr(ac,av);
+		value_arr(ac,av,stacka);
 		return (1);
 	}
 	if (ac > 2)
 	{
-		stacka = value_av(ac,av);
+		value_av(ac,av,stacka);
 		return (2);
 	}
 	return (0);
@@ -75,26 +75,25 @@ int	check_num(char **num, int index)
 	return (1);
 }
 
-t_node	*value_av(int ac, char **av)
+int	value_av(int ac, char **av, t_node **stacka)
 {
-	t_node *stacka;
 	if (check_num(av,1) == 0 || check_duplicates(av,1) == 0 || check_nvalues(av,1) == 0)
 	{
-		return (NULL);
+		return (0);
 	}
-    stacka = create_stack(av,1);
+    *stacka = create_stack(av,1);
 }
 
-t_node *value_arr(int ac,char **av)
+int value_arr(int ac,char **av, t_node **stacka)
 {
 	char **num;
-	t_node *stacka;
 	num = ft_split(av[1], ' ');
 	if(check_num(num,0) == 0 || check_duplicates(num,0) == 0 || check_nvalues(num,0) == 0)
 	{
-		return((t_node *)return_free(num,NULL));
+		free_array(num);
+		return(0);
 	}
-	stacka = create_stack(num,0);
+	*stacka = create_stack(num,0);
 }
 /*
 

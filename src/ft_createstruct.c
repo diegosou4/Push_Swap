@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_createstruct.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: diegmore <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: diemorei <diemorei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/09 14:33:38 by diegmore          #+#    #+#             */
-/*   Updated: 2024/01/09 14:33:39 by diegmore         ###   ########.fr       */
+/*   Updated: 2024/01/15 14:15:45 by diemorei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,6 +85,7 @@ t_node *create_stack(char **num, int index)
 		i++;
         index++;
     }
+	// o codigo termina aqui
 	t_node *pstack;
 	pstack = stacka;
 
