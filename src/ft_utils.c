@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_utils.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: diegmore <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: diemorei <diemorei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/10 12:35:41 by diegmore          #+#    #+#             */
-/*   Updated: 2024/01/10 12:35:43 by diegmore         ###   ########.fr       */
+/*   Updated: 2024/01/15 14:46:32 by diemorei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,4 +22,14 @@ int len_darray(char **num)
         i++;
 
     return(i);
+}
+
+t_node *find_last(t_node *stack)
+{
+    t_node *last;
+
+    last = stack;
+    while (last->next)
+        last = last->next;
+    return (last);
 }

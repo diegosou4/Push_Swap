@@ -6,7 +6,7 @@
 /*   By: diemorei <diemorei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/09 12:06:13 by diegmore          #+#    #+#             */
-/*   Updated: 2024/01/15 14:15:47 by diemorei         ###   ########.fr       */
+/*   Updated: 2024/01/15 15:04:03 by diemorei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,7 @@ int	check_arg(int ac, char **av, t_node **stacka);
 int check_numbers(int argc, char **argv);
 int check_float(char *str);
 
+void push_swap(t_node **stacka, t_node **stackb);
 
 // Arr
 int len_darray(char **num);
@@ -46,9 +47,14 @@ int check_nvalues(char **num, int index);
 int	check_num(char **num, int index);
 t_node* save_values(int ac,char **av);
 
+// COMANDS
+void swap(t_node **stack);
+
+
 // FREE
 void free_array(char **num);
 void* return_free(char **num, void *type);
+t_node *find_last(t_node *stack);
 
 // Messagens de Error
 int error_num(char *str);
