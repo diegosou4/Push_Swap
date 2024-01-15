@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_checknum.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: diegmore <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: diemorei <diemorei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/10 15:48:34 by diegmore          #+#    #+#             */
-/*   Updated: 2024/01/10 15:48:36 by diegmore         ###   ########.fr       */
+/*   Updated: 2024/01/15 13:45:39 by diemorei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,10 +38,17 @@ int check_duplicates(char **num, int index)
 int check_nvalues(char **num, int index)
 {
     char *curr;
-
+    long int value;
     while(num[index])
     {
-        curr = ft_itoa(ft_atoi(num[index]));
+        value = ft_atoi(num[index]);
+        curr = ft_itoa(value);
+        if(value < INT_MIN || value > INT_MAX)
+        {
+            free(curr);
+            ft_printf("Error \n");
+            return(0);
+        }
         if(ft_strncmp(num[index],curr, ft_strlen(num[index])))
         {
             free(curr);

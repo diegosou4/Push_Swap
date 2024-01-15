@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: diegmore <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: diemorei <diemorei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/09 12:06:21 by diegmore          #+#    #+#             */
-/*   Updated: 2024/01/09 12:06:23 by diegmore         ###   ########.fr       */
+/*   Updated: 2024/01/15 13:28:03 by diemorei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,9 @@ int	main(int ac, char **av)
 	int i;
 	t_node *stacka;
 	t_node *stackb;
+	
+	stacka = NULL;
+	stackb = NULL;
 	if (ac < 2)
 		return (0);
 	i = check_arg(ac, av,stacka);
