@@ -5,6 +5,7 @@
 
 void    push_swap(t_node **stacka,t_node **stackb)
 {
-    swap(stacka);
+   // swap(stacka);
+    push(stacka, stackb);
 
 }

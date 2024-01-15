@@ -6,13 +6,13 @@
 /*   By: diemorei <diemorei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/09 14:33:38 by diegmore          #+#    #+#             */
-/*   Updated: 2024/01/15 14:15:45 by diemorei         ###   ########.fr       */
+/*   Updated: 2024/01/15 15:21:05 by diemorei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-t_node	*new_node(int num, int index)
+t_node	*new_node(int num)
 {
 	t_node	*node;
 
@@ -20,19 +20,18 @@ t_node	*new_node(int num, int index)
 	if (!node)
 		return (NULL);
 	node->num = num;
-	node->index = index;
 	node->next = NULL;
 	node->previous = NULL;
 	return (node);
 }
 
-void	add_back(t_node **node, int num, int index)
+void	add_back(t_node **node, int num)
 {
 	t_node	*last;
 	t_node	*pnode;
 
 	pnode = *node;
-	last = new_node(num, index);
+	last = new_node(num);
 	while (pnode->next)
 	{
 		pnode = pnode->next;
@@ -74,15 +73,11 @@ t_node *create_stack(char **num, int index)
     int lenarr;
     lenarr = len_darray(num);
     t_node *stacka;
-	int i;
-	i = 0;
-    stacka = new_node(ft_atoi(num[index]), i);
+    stacka = new_node(ft_atoi(num[index]));
     index++;
-	i++;
     while(index != lenarr)
     {
-        add_back(&stacka,ft_atoi(num[index]),i);
-		i++;
+        add_back(&stacka,ft_atoi(num[index]));
         index++;
     }
 	// o codigo termina aqui
@@ -91,10 +86,8 @@ t_node *create_stack(char **num, int index)
 
 	while(pstack->next)
 	{
-		printf("Numero %i Index %i \n", pstack->num,pstack->index);
 		pstack = pstack->next;
 	}
 	if(pstack->previous != NULL)
-		printf("Numero %i Index %i \n", pstack->num,pstack->index);
     return(stacka);
 }

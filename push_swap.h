@@ -6,7 +6,7 @@
 /*   By: diemorei <diemorei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/09 12:06:13 by diegmore          #+#    #+#             */
-/*   Updated: 2024/01/15 15:04:03 by diemorei         ###   ########.fr       */
+/*   Updated: 2024/01/15 17:19:25 by diemorei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@
 typedef struct node
 {
     int num;
-    int index;
     struct node *next;
     struct node *previous;
 } t_node;
@@ -27,8 +26,8 @@ typedef struct node
 int	value_av(int ac, char **av, t_node **stacka);
 int value_arr(int ac,char **av, t_node **stacka);
 t_node *create_stack(char **num, int index);
-t_node* new_node(int num, int index);
-void add_back(t_node **node,int num, int index);
+t_node	*new_node(int num);
+void	add_back(t_node **node, int num);
 
 int	free_struct(t_node *node);
 int	check_arg(int ac, char **av, t_node **stacka);
@@ -48,8 +47,8 @@ int	check_num(char **num, int index);
 t_node* save_values(int ac,char **av);
 
 // COMANDS
-void swap(t_node **stack);
-
+int swap(t_node **stack);
+int push(t_node **dest, t_node **src);
 
 // FREE
 void free_array(char **num);
