@@ -55,9 +55,11 @@ int my_sort(t_node **stacka, t_node **stackb)
         if(low_number(stacka) == 1)
         {
             push(stackb,stacka);
+            printf("pb\n");
             p = (*stacka);
         }else{
             rotate(stacka);
+            printf("ra\n");
             p = (*stacka);
         }   
     }
