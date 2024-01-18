@@ -56,6 +56,8 @@ int reverse_rotate(t_node **stack);
 int	ft_nodesize(t_node **stack);
 int is_sorted(t_node **stacka);
 int my_sort(t_node **stacka,t_node **stackb);
+int high_number(t_node **stacka);
+
 
 // FREE
 void free_array(char **num);
