@@ -48,10 +48,6 @@ int rotate(t_node **stack)
     t_node *first;
     t_node *last;
     
-    if((*stack)->next == NULL || (*stack))
-    {
-        return(0);
-    }
     first = (*stack);
     (*stack) = (*stack)->next;
     (*stack)->previous = NULL;

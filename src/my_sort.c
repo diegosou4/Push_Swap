@@ -5,7 +5,7 @@
 #include "../push_swap.h"
 
 
-int high_number(t_node **stacka)
+int low_number(t_node **stacka)
 {
     t_node *ptr;
     t_node *p;
@@ -15,11 +15,13 @@ int high_number(t_node **stacka)
     while(ptr)
     {
         p = ptr->next;
-        while(p && ptr->num > p->num)
+        while(p && ptr->num < p->num)
             p = p->next;
         if(p == NULL)
         {
             return(1);
+        }else{
+            return(0);
         }
         ptr = ptr->next;
     }
@@ -50,15 +52,19 @@ int my_sort(t_node **stacka, t_node **stackb)
     p = (*stacka);
     while(p)
     {   
-        if(last_number(stacka) == 1)
-        {
-            rotate(stacka);
-            p = (*stacka);
-        }else if(high_number(stacka) == 1)
+        if(low_number(stacka) == 1)
         {
             push(stackb,stacka);
             p = (*stacka);
-        }
+        }else{
+            rotate(stacka);
+            p = (*stacka);
+        }   
     }
+    while ((*stackb))
+    {
+        push(stacka,stackb);
+    }
+    
     return 0;
 }

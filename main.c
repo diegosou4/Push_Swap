@@ -26,7 +26,7 @@ int	main(int ac, char **av)
 	my_sort(&stacka,&stackb);
 	t_node *ptr;
 
-	ptr = stackb;
+	ptr = stacka;
 
 	while(ptr)
 	{
