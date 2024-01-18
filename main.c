@@ -23,50 +23,11 @@ int	main(int ac, char **av)
 	if (ac < 2)
 		return (0);
 	i = check_arg(ac, av,&stacka);
-	t_node *pnode;
-	pnode = stacka;
-
-	stackb = new_node(5);
-	add_back(&stackb,32);	
-	add_back(&stackb,655);
-	add_back(&stackb,59);		
-	t_node *pnode2;
-	pnode2 = stackb;
-	
-	printf("Antes \n");
-	while(pnode2->next)
-	{
-		printf("stackb: %i\n", pnode2->num);
-		pnode2 = pnode2->next;
-	}
-	printf("stackb: %i \n",pnode2->num);
-	printf("Antes \n");
-	while(pnode->next)
-	{
-		printf("stacka: %i\n", pnode->num);
-		pnode = pnode->next;
-	}
-	printf("stackb: %i \n",pnode->num);
-	push_swap(&stacka, &stackb);
-	pnode2 = stackb;
-	pnode = stacka;
-	printf("Depois \n");
-	
-	while(pnode->next)
-	{
-		printf("stacka: %i\n", pnode->num);
-		pnode = pnode->next;
-	}
-		printf("stackb: %i \n",pnode->num);
-	printf("Depois \n");
-	if(pnode2 != NULL)
-	{
-	while(pnode2->next != NULL)
-	{
-		printf("stackb: %i\n", pnode2->num);
-		pnode2 = pnode2->next;
-	}
-		printf("stackb: %i \n",pnode2->num);
-	}
+	t_node *pstacka;
+	pstacka = stacka;
+	printf("%i first %i second %i third \n", pstacka->num,pstacka->next->num, pstacka->next->next->num);
+	reverse_rotate(&stacka);
+	pstacka = stacka;
+	printf("%i first %i second %i third \n", pstacka->num,pstacka->next->num, pstacka->next->next->num);
 	return (0);
 }

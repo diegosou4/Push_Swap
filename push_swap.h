@@ -49,6 +49,8 @@ t_node* save_values(int ac,char **av);
 // COMANDS
 int swap(t_node **stack);
 int push(t_node **dest, t_node **src);
+int rotate(t_node **stack);
+int reverse_rotate(t_node **stack);
 
 // FREE
 void free_array(char **num);

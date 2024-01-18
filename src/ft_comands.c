@@ -42,4 +42,50 @@ int push(t_node **dest, t_node **src)
     }
     return(1);
 }
-             
+
+int rotate(t_node **stack)
+{
+    t_node *first;
+    t_node *last;
+    
+    first = (*stack);
+
+    (*stack) = (*stack)->next;
+    (*stack)->previous = NULL;
+
+    last = (*stack);
+
+    while(last->next)
+    {
+        last = last->next;
+    }
+    
+    last->next = first;
+
+    first->previous = last;
+
+    first->next = NULL;
+
+}
+
+int reverse_rotate(t_node **stack)
+{
+    t_node *last;
+
+    last = (*stack);
+
+    while(last->next)
+    {
+        last = last->next;
+    }
+
+    last->previous->next = NULL;
+
+    last->previous = NULL;
+
+    last->next = *(stack);
+
+    (*stack)->previous = last;
+
+    (*stack) = last;
+}
