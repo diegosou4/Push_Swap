@@ -81,3 +81,68 @@ STACK_A         STACK_B
 ## para STACK A
 ## O PB envia o primeiro numero da lista da STACK A
 ## para STACK B
+
+
+
+## 
+
+
+1
+4
+5
+3
+2
+
+4
+5
+3
+2
+1
+ra (rotate a)
+
+5
+3
+2
+1
+4
+rotate(a)
+
+
+3          5
+2
+1
+4
+push b
+
+4         5
+3
+2
+1
+reverse rotate(a)
+
+3          4
+2          5
+1
+push b
+
+2       3
+1       4
+        5
+push b
+
+1       2
+        3
+        4
+        5
+push b
+        1
+        2
+        3
+        4
+        5
+push b
+8 Passos
+
+Percorro a linked list e verifico se existe algum numero maior
+se nao vou para o proximo,
+Se eu achar 

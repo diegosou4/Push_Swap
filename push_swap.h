@@ -52,6 +52,11 @@ int push(t_node **dest, t_node **src);
 int rotate(t_node **stack);
 int reverse_rotate(t_node **stack);
 
+// Check
+int	ft_nodesize(t_node **stack);
+int is_sorted(t_node **stacka);
+int my_sort(t_node **stacka,t_node **stackb);
+
 // FREE
 void free_array(char **num);
 void* return_free(char **num, void *type);

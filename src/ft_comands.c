@@ -48,24 +48,22 @@ int rotate(t_node **stack)
     t_node *first;
     t_node *last;
     
+    if((*stack)->next == NULL || (*stack))
+    {
+        return(0);
+    }
     first = (*stack);
-
     (*stack) = (*stack)->next;
     (*stack)->previous = NULL;
-
     last = (*stack);
-
     while(last->next)
     {
         last = last->next;
     }
-    
     last->next = first;
-
     first->previous = last;
-
     first->next = NULL;
-
+    return(1);
 }
 
 int reverse_rotate(t_node **stack)
@@ -88,4 +86,23 @@ int reverse_rotate(t_node **stack)
     (*stack)->previous = last;
 
     (*stack) = last;
+}
+
+int ss(t_node **stacka,t_node **stackb, int i)
+{
+    if(i == 1)
+    {
+        swap(stacka);
+        swap(stackb);
+    }
+    if(i == 2)
+    {
+        rotate(stacka);
+        rotate(stackb);
+    }
+    if(i == 3)
+    {
+        reverse_rotate(stacka);
+        reverse_rotate(stackb);
+    }
 }

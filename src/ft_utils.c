@@ -33,3 +33,18 @@ t_node *find_last(t_node *stack)
         last = last->next;
     return (last);
 }
+
+int	ft_nodesize(t_node **stack)
+{
+	int	i;
+
+    t_node *pstack;
+    pstack = (*stack);
+	i = 0;
+	while (pstack != NULL)
+	{
+		i++;
+		pstack = pstack->next;
+	}
+	return (i);
+}

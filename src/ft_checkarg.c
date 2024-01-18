@@ -91,7 +91,7 @@ int value_arr(int ac,char **av, t_node **stacka)
 	if(check_num(num,0) == 0 || check_duplicates(num,0) == 0 || check_nvalues(num,0) == 0)
 	{
 		free_array(num);
-		return(0);
+		exit(0);
 	}
 	*stacka = create_stack(num,0);
 }

@@ -23,11 +23,15 @@ int	main(int ac, char **av)
 	if (ac < 2)
 		return (0);
 	i = check_arg(ac, av,&stacka);
-	t_node *pstacka;
-	pstacka = stacka;
-	printf("%i first %i second %i third \n", pstacka->num,pstacka->next->num, pstacka->next->next->num);
-	reverse_rotate(&stacka);
-	pstacka = stacka;
-	printf("%i first %i second %i third \n", pstacka->num,pstacka->next->num, pstacka->next->next->num);
+	my_sort(&stacka,&stackb);
+	t_node *ptr;
+
+	ptr = stackb;
+
+	while(ptr)
+	{
+		printf("%i num \n", ptr->num);
+		ptr = ptr->next;
+	}
 	return (0);
 }
