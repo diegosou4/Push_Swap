@@ -71,7 +71,7 @@ int low_number(t_node **stacka);
 
 
 // Case 
-void case3(t_node **stacka);
+int case3(t_node **stacka);
 void caseprintf(int numcase);
 
 // FREE

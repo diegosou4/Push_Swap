@@ -19,40 +19,22 @@ void case3(t_node **stacka)
     first = (*stacka)->num;
     middle = (*stacka)->next->num;
     last = (*stacka)->next->next->num;
-   
-    if(first < middle && first > last && middle > last)
-    {
-        rchoose(stacka,2);
-        return;
-    }
-    if(first > middle && first < last)
-    {
-        schoose(stacka,2);
-        return;
-    }  
+    
     if(middle > first && middle > last && first > last)
-    {
-        printf("passa aqui");
         rrchoose(stacka,2);
-        return;
-    }
-    if(first > middle && first > last && middle > last)
-    {
-        schoose(stacka,2);
-        rrchoose(stacka,2);
-        return;
-    }
-    if(first > middle && first > last && middle < last)
-    {
+    else if(first < middle && first > last && middle > last)
         rchoose(stacka,2);
-        return;
-    }
- 
-    if(first < middle)
+    else if(first > middle && first < last)
+        schoose(stacka,2);
+    else if(first > middle && first > last && middle > last)
     {
         schoose(stacka,2);
-        return;
+        rrchoose(stacka,2);
     }
+    else if(first > middle && first > last && middle < last)
+        rchoose(stacka,2);
+    else if(first < middle)
+        schoose(stacka,2);
 }
 
 
