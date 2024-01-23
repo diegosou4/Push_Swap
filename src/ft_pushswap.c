@@ -38,4 +38,19 @@ void case3(t_node **stacka)
 }
 
 
+void case5(t_node **stacka,t_node **stackb)
+{
+    int firsta;
+    int firstb;
+    int lasta;
+    int lstsize;
 
+    lstsize = ft_nodesize(stacka);
+    pchoose(stacka,stackb, 1);
+    pchoose(stacka,stackb, 1);
+    case3(stacka);
+    pchoose(stackb,stacka, 2);
+    pchoose(stackb,stacka, 2);
+    
+
+}

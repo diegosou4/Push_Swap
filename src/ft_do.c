@@ -33,3 +33,4 @@ void rrr(t_node **stacka, t_node **stackb)
     reverse_rotate(stackb);
     ft_printf("rrr\n");
 }
+

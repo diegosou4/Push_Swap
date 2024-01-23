@@ -62,7 +62,7 @@ void rrr(t_node **stacka, t_node **stackb);
 void rchoose(t_node **stack, int who);
 void rrchoose(t_node **stack, int who);
 void schoose(t_node **stack, int who);
-
+void pchoose(t_node **stack1,t_node **stack2, int who);
 // Check
 int	ft_nodesize(t_node **stack);
 int is_sorted(t_node **stacka);
@@ -71,7 +71,8 @@ int low_number(t_node **stacka);
 
 
 // Case 
-int case3(t_node **stacka);
+void case3(t_node **stacka);
+void case5(t_node **stacka,t_node **stackb);
 void caseprintf(int numcase);
 
 // FREE

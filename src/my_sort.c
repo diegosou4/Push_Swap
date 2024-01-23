@@ -61,7 +61,7 @@ int my_sort(t_node **stacka, t_node **stackb)
     }
     if(is_sorted(stacka) == 1)
         return(1);
-    p = (*stacka);
+   p = (*stacka);
     while(p)
     {   
         if(low_number(stacka) == 1)
