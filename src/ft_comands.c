@@ -82,23 +82,6 @@ int reverse_rotate(t_node **stack)
     (*stack)->previous = last;
 
     (*stack) = last;
+    return(1);
 }
 
-int ss(t_node **stacka,t_node **stackb, int i)
-{
-    if(i == 1)
-    {
-        swap(stacka);
-        swap(stackb);
-    }
-    if(i == 2)
-    {
-        rotate(stacka);
-        rotate(stackb);
-    }
-    if(i == 3)
-    {
-        reverse_rotate(stacka);
-        reverse_rotate(stackb);
-    }
-}

@@ -49,6 +49,18 @@ int last_number(t_node **stacka)
 int my_sort(t_node **stacka, t_node **stackb)
 {
     t_node *p;
+    int tamlst;
+
+    tamlst = ft_nodesize(stacka);
+    if(tamlst == 3)
+    {
+        while(is_sorted(stacka) == 0)
+        {
+            case3(stacka);
+        }
+    }
+    if(is_sorted(stacka) == 1)
+        return(1);
     p = (*stacka);
     while(p)
     {   

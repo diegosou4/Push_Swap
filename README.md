@@ -146,3 +146,27 @@ push b
 Percorro a linked list e verifico se existe algum numero maior
 se nao vou para o proximo,
 Se eu achar 
+
+
+
+Radix Sort
+
+vamos pegar os valores e tornarem em base 2
+
+
+depois disso vamos verificar bit por bit
+
+101
+001
+
+comecamos da esquerda
+
+a partir dai vamos organizando
+
+depois que verificamos a primeira vez
+vamos para proximo bit
+verificando o proximo bit ordenamos novamente
+
+temos que fazer o sort com tamanho do maior numero
+10010
+ex vamos percorrer cada bit

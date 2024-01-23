@@ -52,12 +52,27 @@ int push(t_node **dest, t_node **src);
 int rotate(t_node **stack);
 int reverse_rotate(t_node **stack);
 
+// Use and Print
+
+void ss(t_node  **stacka, t_node **stackb);
+void rr(t_node **stacka, t_node **stackb);
+void rrr(t_node **stacka, t_node **stackb);
+
+
+void rchoose(t_node **stack, int who);
+void rrchoose(t_node **stack, int who);
+void schoose(t_node **stack, int who);
+
 // Check
 int	ft_nodesize(t_node **stack);
 int is_sorted(t_node **stacka);
 int my_sort(t_node **stacka,t_node **stackb);
 int low_number(t_node **stacka);
 
+
+// Case 
+void case3(t_node **stacka);
+void caseprintf(int numcase);
 
 // FREE
 void free_array(char **num);

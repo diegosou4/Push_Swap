@@ -9,3 +9,51 @@ void    push_swap(t_node **stacka,t_node **stackb)
     push(stacka, stackb);
 
 }
+
+void case3(t_node **stacka)
+{
+    int last;
+    int middle;
+    int first;
+
+    first = (*stacka)->num;
+    middle = (*stacka)->next->num;
+    last = (*stacka)->next->next->num;
+   
+    if(first < middle && first > last && middle > last)
+    {
+        rchoose(stacka,2);
+        return;
+    }
+    if(first > middle && first < last)
+    {
+        schoose(stacka,2);
+        return;
+    }  
+    if(middle > first && middle > last && first > last)
+    {
+        printf("passa aqui");
+        rrchoose(stacka,2);
+        return;
+    }
+    if(first > middle && first > last && middle > last)
+    {
+        schoose(stacka,2);
+        rrchoose(stacka,2);
+        return;
+    }
+    if(first > middle && first > last && middle < last)
+    {
+        rchoose(stacka,2);
+        return;
+    }
+ 
+    if(first < middle)
+    {
+        schoose(stacka,2);
+        return;
+    }
+}
+
+
+

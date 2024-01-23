@@ -48,3 +48,4 @@ int	ft_nodesize(t_node **stack)
 	}
 	return (i);
 }
+
