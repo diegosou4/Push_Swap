@@ -67,58 +67,43 @@ int find_min(t_node **stacka, int nodesize)
 
     return index;
 }
-
-
-void case5(t_node **stacka,t_node **stackb)
+void putinb(t_node **stacka, t_node **stackb, int size)
 {
     int min;
 
-    min = find_min(stacka,5);
-    if(min == 0)
-        pchoose(stackb,stacka,1);
+    min = find_min(stacka,size);
     if(min == 1)
-    {
         schoose(stacka,2);
-        pchoose(stacka,stackb,1);
-    }
     if(min == 2)
     {
         rchoose(stacka,2);
         schoose(stacka,2);
-        pchoose(stacka,stackb,1);
     }
     if(min == 3)
     {
-        rrchoose(stacka,2);
-        rrchoose(stacka,2);
-        pchoose(stacka,stackb,1);
+        if(size == 4)
+            rrchoose(stacka,2);
+        else
+        {
+            rrchoose(stacka,2);
+            rrchoose(stacka,2);
+        }
     }
     if(min == 4)
-    {
         rrchoose(stacka,2);
-        pchoose(stacka,stackb,1);
-    }
-    min = find_min(stacka,4);
-    if(min == 0)
-        pchoose(stacka,stackb,1);
-    if(min == 1)
-    {
-        schoose(stacka,2);
-        pchoose(stacka,stackb,1);
-    }
-    if(min == 2)
-    {
-        rchoose(stacka,2);
-        schoose(stacka,2);
-        pchoose(stacka,stackb,1);
-    }
-    if(min == 3)
-    {
-        rrchoose(stacka,2);
-        pchoose(stacka,stackb,1);
-    }
-        case3(stacka);
-    pchoose(stackb,stacka,2);
-    pchoose(stackb,stacka,2);
-
+    pchoose(stacka,stackb,1);
 }
+
+void case5(t_node **stacka,t_node **stackb)
+{
+    putinb(stacka,stackb,5);
+    putinb(stacka,stackb,4);
+    while (is_sorted(stacka) == 0)
+    {
+         case3(stacka);
+    }   
+    pchoose(stackb,stacka,2);
+    pchoose(stackb,stacka,2);
+}
+
+

@@ -75,6 +75,7 @@ void case3(t_node **stacka);
 void case5(t_node **stacka,t_node **stackb);
 void caseprintf(int numcase);
 int find_min(t_node **stacka, int nodesize);
+void putinb(t_node **stacka, t_node **stackb, int size);
 
 // FREE
 void free_array(char **num);
