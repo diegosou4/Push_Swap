@@ -33,24 +33,37 @@ void case3(t_node **stacka)
     }
     else if(first > middle && first > last && middle < last)
         rchoose(stacka,2);
-    else if(first < middle)
+    else if(first > middle)
         schoose(stacka,2);
 }
 
 
 void case5(t_node **stacka,t_node **stackb)
 {
-    int firsta;
     int firstb;
-    int lasta;
-    int lstsize;
-
-    lstsize = ft_nodesize(stacka);
+    int secondb;
+    t_node *index;
+    int i;
+    i = 0;
+    int num;
     pchoose(stacka,stackb, 1);
     pchoose(stacka,stackb, 1);
+    firstb = (*stackb)->num;
+    secondb = (*stackb)->next->num;
+    if(firstb > secondb)
+        schoose(stackb,1);
     case3(stacka);
-    pchoose(stackb,stacka, 2);
-    pchoose(stackb,stacka, 2);
-    
-
+    while(i != 2)
+    {
+        firstb = (*stackb)->num;
+        index = (*stacka);
+        while(index)
+        {
+            if(firstb > index->num)
+                break;
+        num++;
+        }
+        
+    i++;
+    }
 }
