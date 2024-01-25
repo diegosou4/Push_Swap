@@ -82,6 +82,10 @@ void free_array(char **num);
 void* return_free(char **num, void *type);
 t_node *find_last(t_node *stack);
 
+
+// Sorting Algorithm
+void quicksort(t_node **stacka,t_node **stackb);
+
 // Messagens de Error
 int error_num(char *str);
 #endif

@@ -58,5 +58,8 @@ int my_sort(t_node **stacka, t_node **stackb)
             case5(stacka,stackb);
     if(is_sorted(stacka) == 1)
         return(1);
+    else{
+        quicksort(stacka,stackb);
+    }
     return 0;
 }
