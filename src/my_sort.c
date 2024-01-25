@@ -53,39 +53,10 @@ int my_sort(t_node **stacka, t_node **stackb)
 
     tamlst = ft_nodesize(stacka);
     if(tamlst == 3)
-    {
-        while(is_sorted(stacka) == 0)
-        {
             case3(stacka);
-        }
-    }
-    if(tamlst == 5)
-    {
-        while (is_sorted(stacka) == 0)
-        {
+    else if(tamlst == 5)
             case5(stacka,stackb);
-        }
-    }
     if(is_sorted(stacka) == 1)
         return(1);
-   p = (*stacka);
-    while(p)
-    {   
-        if(low_number(stacka) == 1)
-        {
-            push(stackb,stacka);
-            printf("pb\n");
-            p = (*stacka);
-        }else{
-            rotate(stacka);
-            printf("ra\n");
-            p = (*stacka);
-        }   
-    }
-    while ((*stackb))
-    {
-        push(stacka,stackb);
-    }
-    
     return 0;
 }

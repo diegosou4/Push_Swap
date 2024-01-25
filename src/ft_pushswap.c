@@ -14,28 +14,25 @@ void case3(t_node **stacka)
 {
     int last;
     int middle;
-    int first;
 
-    first = (*stacka)->num;
     middle = (*stacka)->next->num;
     last = (*stacka)->next->next->num;
-    
-    if(middle > first && middle > last && first > last)
+    if(middle > (*stacka)->num && middle > last && (*stacka)->num > last)
         rrchoose(stacka,2);
-    else if(first < middle && first > last && middle > last)
+    else if((*stacka)->num < middle && (*stacka)->num > last && middle > last)
         rchoose(stacka,2);
-    else if(first > middle && first < last)
+    else if((*stacka)->num > middle && (*stacka)->num < last)
         schoose(stacka,2);
-    else if(first > middle && first > last && middle > last)
+    else if((*stacka)->num > middle && (*stacka)->num > last && middle > last)
     {
         schoose(stacka,2);
         rrchoose(stacka,2);
     }
-    else if(first > middle && first > last && middle < last)
+    else if((*stacka)->num > middle && (*stacka)->num > last && middle < last)
         rchoose(stacka,2);
-    else if(first > middle)
+    else if((*stacka)->num > middle)
         schoose(stacka,2);
-    else if(middle > last && last > first)
+    else if(middle > last && last > (*stacka)->num)
     {
         schoose(stacka,2);
         rchoose(stacka,2);
@@ -98,10 +95,7 @@ void case5(t_node **stacka,t_node **stackb)
 {
     putinb(stacka,stackb,5);
     putinb(stacka,stackb,4);
-    while (is_sorted(stacka) == 0)
-    {
-         case3(stacka);
-    }   
+    case3(stacka);   
     pchoose(stackb,stacka,2);
     pchoose(stackb,stacka,2);
 }
