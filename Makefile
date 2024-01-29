@@ -72,5 +72,7 @@ SRC = ./src/ft_checkarg.c \
 LIBFT = $(addprefix $(PREFIX),$(LIBFT_SRC))
 CC = cc
 CFLAGS = -Wall -Wextra -Werror
-all: 
-	$(CC) main.c -g  $(LIBFT) $(SRC)
+all: $(NAME)
+
+$(NAME):
+	$(CC) -g -o $(NAME) main.c $(LIBFT) $(SRC) 
