@@ -84,8 +84,13 @@ t_node *find_last(t_node *stack);
 
 
 // Sorting Algorithm
-void quicksort(t_node **stacka,t_node **stackb);
 
+
+void findindex(t_node **stack, int pivot);
+int find_indexa(t_node **stack, int pivot, int sizestack);
+int find_indexb(t_node **stack, int pivot, int sizestack);
+int havemin(t_node **stack, int pivot);
+void quicksort(t_node **stacka,t_node **stackb);
 // Messagens de Error
 int error_num(char *str);
 #endif

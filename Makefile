@@ -66,7 +66,8 @@ SRC = ./src/ft_checkarg.c \
       ./src/my_sort.c \
       ./src/ft_do1.c \
       ./src/ft_do.c \
-      ./src/ft_quicksort.c
+      ./src/ft_quicksort.c \
+      ./src/ft_quickutils.c
 
 LIBFT = $(addprefix $(PREFIX),$(LIBFT_SRC))
 CC = cc
