@@ -94,6 +94,9 @@ void quicksort(t_node **stacka,t_node **stackb);
 int find_indexmin(t_node **stack, int min, int sizestack);
 int findminnum(t_node **stack);
 int findmax(t_node **stack);
+int findbigproxfinal(t_node **stack,int numstackb);
+int findbigproxstart(t_node **stack, int numstackb);
+void moveprox(t_node **stack, int num);
 // Messagens de Error
 int error_num(char *str);
 #endif

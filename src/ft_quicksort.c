@@ -115,40 +115,43 @@ void quicksort(t_node **stacka,t_node **stackb)
     int pivot;
     int sizestack;
     int min;
+    int i;
+    i = 0;
     int max;
-    sizestack = ft_nodesize(stacka) / 3;
-    while(ft_nodesize(stacka) > sizestack)
+    sizestack = ft_nodesize(stacka) / 2;
+    pivot = givemepivot(stacka);
+    while(ft_nodesize(stacka) != sizestack)
     {
-        pivot = givemepivot(stacka);
-        if(havemin(stacka, pivot) == 0)
-            break;
-        while(ft_nodesize(stacka) > sizestack && ft_nodesize(stacka) > 1 && havemin(stacka,pivot) == 1)
+       if((*stacka)->num > pivot && i == 1)
         {
-        findindex(stacka,pivot);
-        pchoose(stacka,stackb,1);
+            pchoose(stacka,stackb,1);
+            rchoose(stackb,1);
+        }else
+        {
+            pchoose(stacka,stackb,1);
+            i = 1;
         }
     }
+    i = 0;
+    int numero = findminnum(stackb);
+    while(find_last(*(stackb))->num > numero)
+    {
+        rrchoose(stackb,1);
+    }
+    numero = findmax(stackb);
     while(ft_nodesize(stacka) != 0)
     {
-        min = findminnum(stacka); 
-        min = find_indexmin(stacka,min,ft_nodesize(stacka) + 1);
-        if(min > ft_nodesize(stacka) + 1 )
+       if((*stacka)->num < numero && i == 1)
         {
-            min = ft_nodesize(stacka) + 1 - min;
-            while(min != 0)
-            {
-                rrchoose(stacka,2);
-                min--;
-            }
-        } else
+            pchoose(stacka,stackb,1);
+            rchoose(stackb,1);
+        }else
         {
-            while(min != 0)
-            {
-                rchoose(stacka,2);
-                min--;
-            }
-        }  
-        pchoose(stacka,stackb,1);    
+            pchoose(stacka,stackb,1);
+            i = 1;
+            numero = findmax(stackb);
+        }
+      
     }
     while(ft_nodesize(stackb) != 0)
     {
