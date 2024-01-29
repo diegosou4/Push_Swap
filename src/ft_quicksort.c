@@ -59,18 +59,24 @@ void findindex(t_node **stack, int pivot)
     int indexa;     
     int indexb;
     int nodesize;
-  
-    if(indexa < indexb)
+    indexa = find_indexa(stack,pivot,ft_nodesize(stack)) + 1; 
+    indexb = find_indexb(stack,pivot,ft_nodesize(stack)) + 1; 
+    t_node *ptr;
+    ptr = (*stack);
+    int havemin1 = havemin(stack,pivot);
+    if(indexa < indexb || indexa == indexb)
     {
-        while((*stack)->num > (*stack)->next->num && havemin(stack, pivot) == 1)
+        while(indexa != 0)
         {
             rchoose(stack,2);
+            indexa--;
         }
     }else if(indexb < indexa)
     {
-        while((*stack)->num > (*stack)->next->num && havemin(stack, pivot) == 1)
-            {
+        while(indexb != 0)
+        {
             rrchoose(stack,2);
+            indexb--;
         }
     }
 }
@@ -107,10 +113,64 @@ int givemepivot(t_node **stacka)
 void quicksort(t_node **stacka,t_node **stackb)
 {
     int pivot;
-
-    pivot = givemepivot(stacka);
-
-    findindex(stacka,pivot);
-    pchoose(stacka,stackb,1);
+    int sizestack;
+    int min;
+    int max;
+    sizestack = ft_nodesize(stacka) / 3;
+    while(ft_nodesize(stacka) > sizestack)
+    {
+        pivot = givemepivot(stacka);
+        if(havemin(stacka, pivot) == 0)
+            break;
+        while(ft_nodesize(stacka) > sizestack && ft_nodesize(stacka) > 1 && havemin(stacka,pivot) == 1)
+        {
+        findindex(stacka,pivot);
+        pchoose(stacka,stackb,1);
+        }
+    }
+    while(ft_nodesize(stacka) != 0)
+    {
+        min = findminnum(stacka); 
+        min = find_indexmin(stacka,min,ft_nodesize(stacka) + 1);
+        if(min > ft_nodesize(stacka) + 1 )
+        {
+            min = ft_nodesize(stacka) + 1 - min;
+            while(min != 0)
+            {
+                rrchoose(stacka,2);
+                min--;
+            }
+        } else
+        {
+            while(min != 0)
+            {
+                rchoose(stacka,2);
+                min--;
+            }
+        }  
+        pchoose(stacka,stackb,1);    
+    }
+    while(ft_nodesize(stackb) != 0)
+    {
+        max = findmax(stackb);
+        max = find_indexmin(stackb,max,ft_nodesize(stackb) + 1);
+        if(max > ft_nodesize(stackb) + 1 )
+        {
+            max = ft_nodesize(stackb) + 1 - max;
+            while(min != 0)
+            {
+                rrchoose(stackb,1);
+                max--;
+            }
+        } else
+        {
+            while(max != 0)
+            {
+                rchoose(stackb,1);
+                max--;
+            }
+        }  
+      pchoose(stackb,stacka,2);  
+    }
 
 }

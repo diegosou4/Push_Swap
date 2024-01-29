@@ -27,11 +27,5 @@ int	main(int ac, char **av)
 	t_node *ptr;
 
 	ptr = stacka;
-	printf("%s", is_sorted(&stacka) ? "Done\n" : "Fail\n");
-	while(ptr)
-	{
-		printf("%i num \n", ptr->num);
-		ptr = ptr->next;
-	}
 	return (0);
 }

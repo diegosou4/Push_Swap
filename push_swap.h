@@ -91,6 +91,9 @@ int find_indexa(t_node **stack, int pivot, int sizestack);
 int find_indexb(t_node **stack, int pivot, int sizestack);
 int havemin(t_node **stack, int pivot);
 void quicksort(t_node **stacka,t_node **stackb);
+int find_indexmin(t_node **stack, int min, int sizestack);
+int findminnum(t_node **stack);
+int findmax(t_node **stack);
 // Messagens de Error
 int error_num(char *str);
 #endif
