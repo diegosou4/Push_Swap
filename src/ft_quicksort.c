@@ -152,23 +152,17 @@ void quicksort(t_node **stacka,t_node **stackb)
     }
     while(ft_nodesize(stackb) != 0)
     {
-        max = findmax(stackb);
-        max = find_indexmin(stackb,max,ft_nodesize(stackb) + 1);
-        if(max > ft_nodesize(stackb) + 1 )
+        int nummax;
+        nummax = findmax(stackb);
+        max = find_indexmin(stackb,nummax,ft_nodesize(stackb) + 1);
+        if(max > ((ft_nodesize(stackb) + 1) / 2))
         {
-            max = ft_nodesize(stackb) + 1 - max;
-            while(min != 0)
-            {
+            while((*stackb)->num != nummax)
                 rrchoose(stackb,1);
-                max--;
-            }
         } else
         {
-            while(max != 0)
-            {
+            while((*stackb)->num != nummax)
                 rchoose(stackb,1);
-                max--;
-            }
         }  
       pchoose(stackb,stacka,2);  
     }
