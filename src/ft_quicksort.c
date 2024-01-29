@@ -6,7 +6,7 @@
 /*   By: diemorei <diemorei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/25 16:42:27 by diegmore          #+#    #+#             */
-/*   Updated: 2024/01/29 20:02:23 by diemorei         ###   ########.fr       */
+/*   Updated: 2024/01/29 21:06:48 by diemorei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -120,7 +120,25 @@ void quicksort(t_node **stacka,t_node **stackb)
     int max;
     sizestack = ft_nodesize(stacka) / 2;
     pivot = givemepivot(stacka);
-    while(ft_nodesize(stacka) != sizestack)
+    while(ft_nodesize(stacka) != sizestack && havemin(stacka,pivot) == 1)
+    {
+       if((*stacka)->num > pivot && i == 1)
+        {
+            rchoose(stacka,2);
+        }else
+        {
+            pchoose(stacka,stackb,1);
+            i = 1;
+        }
+    }
+    i = 0;
+    pivot = findminnum(stackb);
+    while(find_last(*(stackb))->num > pivot)
+    {
+        rrchoose(stackb,1);
+    }
+    pivot = givemepivot(stackb);
+    while(ft_nodesize(stacka) != 0)
     {
        if((*stacka)->num > pivot && i == 1)
         {
@@ -131,27 +149,24 @@ void quicksort(t_node **stacka,t_node **stackb)
             pchoose(stacka,stackb,1);
             i = 1;
         }
+        if((*stackb)->num > (*stackb)->next->num)
+            schoose(stackb,1);
     }
-    i = 0;
-    int numero = findminnum(stackb);
-    while(find_last(*(stackb))->num > numero)
+    while(ft_nodesize(stackb) != 0)
     {
-        rrchoose(stackb,1);
-    }
-    numero = givemepivot(stackb);
-    while(ft_nodesize(stacka) != 0)
-    {
-       if((*stacka)->num > numero && i == 1)
+        int nummax;
+        nummax = findmax(stackb);
+        max = find_indexmin(stackb,nummax,ft_nodesize(stackb) + 1);
+        if(max > ((ft_nodesize(stackb) + 1) / 2))
         {
-            pchoose(stacka,stackb,1);
-            rchoose(stackb,1);
-        }else
+            while((*stackb)->num != nummax)
+                rrchoose(stackb,1);
+        } else
         {
-            pchoose(stacka,stackb,1);
-            i = 1;
-            numero = findmax(stackb);
-        }
-      
+            while((*stackb)->num != nummax)
+                rchoose(stackb,1);
+        }  
+      pchoose(stackb,stacka,2);  
     }
 
 }
