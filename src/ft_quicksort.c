@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_quicksort.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: diegmore <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: diemorei <diemorei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/25 16:42:27 by diegmore          #+#    #+#             */
-/*   Updated: 2024/01/25 16:42:29 by diegmore         ###   ########.fr       */
+/*   Updated: 2024/01/29 20:02:23 by diemorei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -138,10 +138,10 @@ void quicksort(t_node **stacka,t_node **stackb)
     {
         rrchoose(stackb,1);
     }
-    numero = findmax(stackb);
+    numero = givemepivot(stackb);
     while(ft_nodesize(stacka) != 0)
     {
-       if((*stacka)->num < numero && i == 1)
+       if((*stacka)->num > numero && i == 1)
         {
             pchoose(stacka,stackb,1);
             rchoose(stackb,1);
@@ -152,22 +152,6 @@ void quicksort(t_node **stacka,t_node **stackb)
             numero = findmax(stackb);
         }
       
-    }
-    while(ft_nodesize(stackb) != 0)
-    {
-        int nummax;
-        nummax = findmax(stackb);
-        max = find_indexmin(stackb,nummax,ft_nodesize(stackb) + 1);
-        if(max > ((ft_nodesize(stackb) + 1) / 2))
-        {
-            while((*stackb)->num != nummax)
-                rrchoose(stackb,1);
-        } else
-        {
-            while((*stackb)->num != nummax)
-                rchoose(stackb,1);
-        }  
-      pchoose(stackb,stacka,2);  
     }
 
 }
