@@ -73,20 +73,22 @@ int findmax(t_node **stack)
 
 int havemin(t_node **stack, int pivot)
 {
-
-    t_node *ptr;
-
-    ptr = (*stack);
-
-    while(ptr)
+    if(stack == NULL || *stack == NULL)
     {
-        if(ptr->num < pivot)
+        return 0;
+    }
+
+    t_node *ptr = *stack;
+
+    while(ptr != NULL)
+    {
+        if(ptr->num <= pivot)
         {
-            return(1);
+            return 1;
         }
         ptr = ptr->next;
     }
-    return(0);
+    return 0;
 }
 
 

@@ -90,6 +90,7 @@ int sort_c(t_node **stackc, t_node **stackd);
 void tempsort(t_node **stacka,t_node **stackc);
 
 void findindex(t_node **stack, int pivot);
+void firstsetp(t_node **stacka,t_node **stackb, t_node **stackc);
 int find_indexa(t_node **stack, int pivot, int sizestack);
 int find_indexb(t_node **stack, int pivot, int sizestack);
 int havemin(t_node **stack, int pivot);

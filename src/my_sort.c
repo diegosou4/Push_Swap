@@ -57,9 +57,16 @@ int my_sort(t_node **stacka, t_node **stackb,t_node **stackc)
     else if(tamlst == 5)
             case5(stacka,stackb);
     if(is_sorted(stacka) == 1)
+    {
         return(1);
+    }
+        
     else{
-        quicksort(stacka,stackb,stackc);
+        while(is_sorted(stacka) != 1)
+        {
+                quicksort(stacka,stackb,stackc);
+        }
+    
     }
     return 0;
 }
