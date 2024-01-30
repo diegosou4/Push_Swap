@@ -17,19 +17,20 @@ int	main(int ac, char **av)
 	int i;
 	t_node *stacka;
 	t_node *stackb;
-	
+	t_node *stackc;
+	stackc = NULL;
 	stacka = NULL;
 	stackb = NULL;
 	if (ac < 2)
 		return (0);
-	i = check_arg(ac, av,&stacka);
-	my_sort(&stacka,&stackb);
-	t_node *ptr;
-	while(stacka)
+	i = check_arg(ac, av,&stacka, &stackc);
+	my_sort(&stacka,&stackb,&stackc);
+	while(stacka != NULL)
 	{
-		printf("%i -- \n", stacka->num);
+		printf("%i \n",stacka->num);
 		stacka = stacka->next;
 	}
+	t_node *ptr;
 	free(stacka);
 	ptr = stacka;
 	return (0);

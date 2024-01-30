@@ -94,3 +94,5 @@ void moveprox(t_node **stack,int num)
     }
 
 }
+
+

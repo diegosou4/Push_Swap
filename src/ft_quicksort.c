@@ -110,39 +110,121 @@ int givemepivot(t_node **stacka)
 }
 
 
-void quicksort(t_node **stacka,t_node **stackb)
+int sort_c(t_node **stackc, t_node **stackd)
 {
-    int pivot;
+    t_node *p;
+    p = (*stackc);
+    while(p)
+    {   
+        if(low_number(stackc) == 1)
+        {
+            push(stackd,stackc);
+            p = (*stackc);
+        }else{
+            rotate(stackc);
+            p = (*stackc);
+        }   
+    }
+    while ((*stackd))
+    {
+        push(stackc,stackd);
+    }
+    
+    return(1);
+}
+void tempsort(t_node **stacka,t_node **stackc)
+{
+    t_node *stackd;
+    stackd = NULL;
+    while(is_sorted(stackc) == 0)
+    {
+        sort_c(stackc,&stackd);
+    }
 
-    int min;
+}
+int caselen(int len)
+{
     int i;
 
-    int max;
     i = 0;
-    pivot = givemepivot(stacka);
-    start_sort(stacka,stackb,pivot);
-    pivot = findminnum(stackb);
-    while(find_last(*(stackb))->num > pivot)
-    {
-        rrchoose(stackb,1);
-    }
-    pivot = givemepivot(stackb);
-    while(ft_nodesize(stacka) != 0)
-    {
-       if((*stacka)->num > pivot && i == 1)
+    if(len <= 80 )
+        i = 2;
+    else if(len <= 100)
+        i = 4;
+    else if(len <= 150)
+        i = 6;
+    else if(len <= 500)
+        i = 8;
+    else if(len <= 1000)
+        i = 16;
+    else if(len <= INT_MAX)
+        i = 20;
+    return(i);
+}
+
+t_node *stackpivot(t_node **stackc)
+{
+    int lencase;
+    int len = caselen(ft_nodesize(stackc));
+    lencase = ft_nodesize(stackc) / len;
+    t_node *stackpiv = NULL;
+    t_node *current = *stackc;
+    int i = 0;
+    int j = 0;
+
+    while(current != NULL) 
+    {   
+        if(i == (lencase - 1 + j*lencase))
         {
-            pchoose(stacka,stackb,1);
-            rchoose(stackb,1);
-        }else
-        {
-            pchoose(stacka,stackb,1);
-            i = 1;
+            if(j == 0)
+            {
+                stackpiv = new_node(current->num);
+            }
+            else
+            {
+                add_back(&stackpiv, current->num);
+            }
+            j++;
         }
-        if((*stackb)->num > (*stackb)->next->num)
-            schoose(stackb,1);
+        current = current->next;
+        i++;
+    }
+    return stackpiv;
+}
+
+void quicksort(t_node **stacka,t_node **stackb, t_node **stackc)
+{
+
+    tempsort(stacka,stackc);
+    t_node *pivot;
+
+    pivot = stackpivot(stackc);
+    while(pivot != NULL)
+    {
+        int haveminn = havemin(stacka,pivot->num);
+        while(havemin(stacka,pivot->num) == 1)
+        {
+        if((*stacka)->num <= pivot->num)
+        {
+            pchoose(stacka,stackb,2);
+        }else 
+        {
+            rchoose(stacka,1);
+        }
+        if(ft_nodesize(stackb) > 1)
+        {
+            if((*stackb)->num > (*stackb)->next->num)
+            {
+                schoose(stackb,1);
+            }
+        }
+          int haveminn = havemin(stacka,pivot->num);
+        }
+        pivot = pivot->next;
     }
     while(ft_nodesize(stackb) != 0)
     {
+        int max;
         int nummax;
         nummax = findmax(stackb);
         max = find_indexmin(stackb,nummax,ft_nodesize(stackb) + 1);
@@ -159,3 +241,5 @@ void quicksort(t_node **stacka,t_node **stackb)
     }
 
 }
+
+

@@ -46,7 +46,7 @@ int last_number(t_node **stacka)
     return(0);
 
 }
-int my_sort(t_node **stacka, t_node **stackb)
+int my_sort(t_node **stacka, t_node **stackb,t_node **stackc)
 {
     t_node *p;
     int tamlst;
@@ -59,7 +59,7 @@ int my_sort(t_node **stacka, t_node **stackb)
     if(is_sorted(stacka) == 1)
         return(1);
     else{
-        quicksort(stacka,stackb);
+        quicksort(stacka,stackb,stackc);
     }
     return 0;
 }

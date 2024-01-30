@@ -89,28 +89,4 @@ int havemin(t_node **stack, int pivot)
     return(0);
 }
 
-void start_sort(t_node **stacka,t_node **stackb, int pivot)
-{
-    int i;
-    i = 0;
-    int sizestack;
-    sizestack = ft_nodesize(stacka) / 2;
-    while(ft_nodesize(stacka) != sizestack && havemin(stacka,pivot) == 1)
-    {
-      if((*stacka)->num > pivot && i == 1)
-        {
-            rchoose(stacka,2);
-        }else
-        {
-            if(ft_nodesize(stackb) > 3 && (*stacka)->num > (pivot / 2))
-            {
-                    pchoose(stacka,stackb,1);
-                    rchoose(stackb,1);
-            }else
-            {
-                  pchoose(stacka,stackb,1);
-            }
-            i = 1;
-        }
-    }
-}
+

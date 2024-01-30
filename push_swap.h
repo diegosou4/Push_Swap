@@ -23,14 +23,14 @@ typedef struct node
 } t_node;
 
 
-int	value_av(int ac, char **av, t_node **stacka);
-int value_arr(int ac,char **av, t_node **stacka);
+int	value_av(int ac, char **av, t_node **stacka, t_node **stackc);
+int value_arr(int ac,char **av, t_node **stacka, t_node **stackc);
 t_node *create_stack(char **num, int index);
 t_node	*new_node(int num);
 void	add_back(t_node **node, int num);
 
 int	free_struct(t_node *node);
-int	check_arg(int ac, char **av, t_node **stacka);
+int	check_arg(int ac, char **av, t_node **stacka, t_node **stackc);
 int check_numbers(int argc, char **argv);
 int check_float(char *str);
 
@@ -66,7 +66,7 @@ void pchoose(t_node **stack1,t_node **stack2, int who);
 // Check
 int	ft_nodesize(t_node **stack);
 int is_sorted(t_node **stacka);
-int my_sort(t_node **stacka,t_node **stackb);
+int my_sort(t_node **stacka,t_node **stackb,t_node **stackc);
 int low_number(t_node **stacka);
 
 
@@ -84,13 +84,16 @@ t_node *find_last(t_node *stack);
 
 
 // Sorting Algorithm
+int caselen(int len);
+t_node *stackpivot(t_node **stackc);
+int sort_c(t_node **stackc, t_node **stackd);
+void tempsort(t_node **stacka,t_node **stackc);
 
-void start_sort(t_node **stacka,t_node **stackb, int pivot);
 void findindex(t_node **stack, int pivot);
 int find_indexa(t_node **stack, int pivot, int sizestack);
 int find_indexb(t_node **stack, int pivot, int sizestack);
 int havemin(t_node **stack, int pivot);
-void quicksort(t_node **stacka,t_node **stackb);
+void quicksort(t_node **stacka,t_node **stackb,t_node **stackc);
 int find_indexmin(t_node **stack, int min, int sizestack);
 int findminnum(t_node **stack);
 int findmax(t_node **stack);
