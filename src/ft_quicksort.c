@@ -199,9 +199,9 @@ void firstsetp(t_node **stacka,t_node **stackb, t_node **stackc)
     pivot = stackpivot(stackc);
     t_node *ptr;
     ptr = pivot;
-    while(pivot != NULL)
+    while(pivot != NULL && ft_nodesize(stacka) > 1)
     {
-        while(havemin(stacka,ptr->num) == 1 && stacka != NULL)
+        while(havemin(stacka,ptr->num) == 1 && ft_nodesize(stacka) > 1)
         {
         if((*stacka)->num <= ptr->num)
         {
@@ -213,7 +213,6 @@ void firstsetp(t_node **stacka,t_node **stackb, t_node **stackc)
         }
         ptr = ptr->next;
     }
-    free_struct(pivot);
 }
 
 void quicksort(t_node **stacka,t_node **stackb, t_node **stackc)

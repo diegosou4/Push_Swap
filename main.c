@@ -25,7 +25,5 @@ int	main(int ac, char **av)
 		return (0);
 	i = check_arg(ac, av,&stacka, &stackc);
 	my_sort(&stacka,&stackb,&stackc);
-	free_struct(stacka);
-	free_struct(stackc);
 	return (0);
 }
