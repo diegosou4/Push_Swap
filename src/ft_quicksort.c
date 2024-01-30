@@ -199,24 +199,17 @@ void quicksort(t_node **stacka,t_node **stackb, t_node **stackc)
     t_node *pivot;
 
     pivot = stackpivot(stackc);
-    while(pivot != NULL)
+    while(pivot != NULL )
     {
         int haveminn = havemin(stacka,pivot->num);
         while(havemin(stacka,pivot->num) == 1)
         {
         if((*stacka)->num <= pivot->num)
         {
-            pchoose(stacka,stackb,2);
+            pchoose(stacka,stackb,1);
         }else 
         {
-            rchoose(stacka,1);
-        }
-        if(ft_nodesize(stackb) > 1)
-        {
-            if((*stackb)->num > (*stackb)->next->num)
-            {
-                schoose(stackb,1);
-            }
+            rchoose(stacka,2);
         }
           int haveminn = havemin(stacka,pivot->num);
         }
