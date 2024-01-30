@@ -77,3 +77,8 @@ all: $(NAME)
 
 $(NAME):
 	$(CC) -g -o $(NAME) main.c $(LIBFT) $(SRC) 
+
+clean: $(NAME)
+	@rm -rf $(NAME)
+
+re: clean all

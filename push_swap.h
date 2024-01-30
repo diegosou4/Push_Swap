@@ -85,7 +85,7 @@ t_node *find_last(t_node *stack);
 
 // Sorting Algorithm
 
-
+void start_sort(t_node **stacka,t_node **stackb, int pivot);
 void findindex(t_node **stack, int pivot);
 int find_indexa(t_node **stack, int pivot, int sizestack);
 int find_indexb(t_node **stack, int pivot, int sizestack);

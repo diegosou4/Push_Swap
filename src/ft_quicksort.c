@@ -113,25 +113,14 @@ int givemepivot(t_node **stacka)
 void quicksort(t_node **stacka,t_node **stackb)
 {
     int pivot;
-    int sizestack;
+
     int min;
     int i;
-    i = 0;
+
     int max;
-    sizestack = ft_nodesize(stacka) / 2;
-    pivot = givemepivot(stacka);
-    while(ft_nodesize(stacka) != sizestack && havemin(stacka,pivot) == 1)
-    {
-       if((*stacka)->num > pivot && i == 1)
-        {
-            rchoose(stacka,2);
-        }else
-        {
-            pchoose(stacka,stackb,1);
-            i = 1;
-        }
-    }
     i = 0;
+    pivot = givemepivot(stacka);
+    start_sort(stacka,stackb,pivot);
     pivot = findminnum(stackb);
     while(find_last(*(stackb))->num > pivot)
     {

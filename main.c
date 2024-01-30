@@ -25,6 +25,11 @@ int	main(int ac, char **av)
 	i = check_arg(ac, av,&stacka);
 	my_sort(&stacka,&stackb);
 	t_node *ptr;
+	while(stacka)
+	{
+		printf("%i -- \n", stacka->num);
+		stacka = stacka->next;
+	}
 	free(stacka);
 	ptr = stacka;
 	return (0);
