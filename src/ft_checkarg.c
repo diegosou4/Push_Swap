@@ -79,7 +79,7 @@ int	value_av(int ac, char **av, t_node **stacka, t_node **stackc)
 {
 	if (check_num(av,1) == 0 || check_duplicates(av,1) == 0 || check_nvalues(av,1) == 0)
 	{
-		return (0);
+		exit(0);
 	}
     *stacka = create_stack(av,1);
 	*stackc = create_stack(av,1);

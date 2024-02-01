@@ -213,6 +213,7 @@ void firstsetp(t_node **stacka,t_node **stackb, t_node **stackc)
         }
         ptr = ptr->next;
     }
+   free_pivot(pivot);
 }
 
 void quicksort(t_node **stacka,t_node **stackb, t_node **stackc)

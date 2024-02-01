@@ -58,6 +58,8 @@ int my_sort(t_node **stacka, t_node **stackb,t_node **stackc)
             case5(stacka,stackb);
     if(is_sorted(stacka) == 1)
     {
+        free_stack(stacka);
+        free_stack(stackc);
         return(1);
     }
         
@@ -65,6 +67,12 @@ int my_sort(t_node **stacka, t_node **stackb,t_node **stackc)
         while(is_sorted(stacka) != 1)
         {
                 quicksort(stacka,stackb,stackc);
+        }
+         if(is_sorted(stacka) == 1)
+        {
+        free_stack(stacka);
+        free_stack(stackc);
+        return(1);
         }
     
     }

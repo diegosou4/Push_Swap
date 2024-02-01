@@ -78,6 +78,8 @@ int find_min(t_node **stacka, int nodesize);
 void putinb(t_node **stacka, t_node **stackb, int size);
 
 // FREE
+void free_stack(t_node **stack);
+void free_pivot(t_node *pivot);
 void free_array(char **num);
 void* return_free(char **num, void *type);
 t_node *find_last(t_node *stack);

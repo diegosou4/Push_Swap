@@ -48,3 +48,30 @@ void	*return_free(char **num, void *type)
 	free_array(num);
 	return (type);
 }
+
+void free_stack(t_node **stack)
+{
+	t_node *p;
+	p = find_last((*stack));
+    while(p != NULL)
+    {
+        t_node *prev;
+        prev = p->previous;
+        free(p);
+        p = prev;
+    }
+	(*stack) = NULL;
+}
+void free_pivot(t_node *pivot)
+{
+	t_node *ptr;
+	ptr = find_last(pivot);
+    while(ptr != NULL)
+    {
+        t_node *prev;
+        prev = ptr->previous;
+        free(ptr);
+        ptr = prev;
+    }
+    pivot = NULL;
+}

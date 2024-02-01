@@ -76,7 +76,7 @@ CFLAGS = -Wall -Wextra -Werror
 all: $(NAME)
 
 $(NAME):
-	$(CC) -g -o $(NAME) main.c $(LIBFT) $(SRC) 
+	$(CC) $(CFLAGS) -g -o $(NAME) main.c $(LIBFT) $(SRC) 
 
 clean: $(NAME)
 	@rm -rf $(NAME)
