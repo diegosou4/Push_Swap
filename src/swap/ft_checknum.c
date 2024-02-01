@@ -63,7 +63,7 @@ int	check_nvalues(char **num, int index)
 		curr = ft_itoa(value);
 		if (value < INT_MIN || value > INT_MAX)
 			free_nvalues(curr);
-		if (num[index][0] == '+')
+		if (num[index][0] == '+' || num[index][0] == '0')
 		{
 			if (ft_strncmp(&num[index][1], curr, ft_strlen(num[index]) - 1))
 				free_nvalues(curr);
