@@ -20,9 +20,9 @@ int	check_float(char *str)
 	while (str[i])
 	{
 		if (str[i] == '-')
-			return (error_num("Tem um valor negativo"));
+			return (error_num());
 		if (str[i] == '.' || str[i] == ',')
-			return (error_num("Tem um numero que nao e inteiro"));
+			return (error_num());
 		i++;
 	}
 	return (1);
@@ -42,7 +42,7 @@ int	check_duplicates(char **num, int index)
 		{
 			if (ft_atoi(num[curr]) == ft_atoi(num[index]))
 			{
-				ft_printf("Error\n");
+				write(2, "Error\n", 6);
 				return (0);
 			}
 			index++;

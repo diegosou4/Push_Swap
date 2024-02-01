@@ -68,8 +68,8 @@ int	ft_nodesize(t_node **stack)
 	return (i);
 }
 
-int	error_num(char *str)
+int	error_num(void)
 {
-	ft_printf("%s\n", str);
+	write(2, "Error\n", 6);
 	return (0);
 }

@@ -96,5 +96,5 @@ int				findmax(t_node **stack);
 int				findbigproxfinal(t_node **stack, int numstackb);
 int				findbigproxstart(t_node **stack, int numstackb);
 // Messagens de Error
-int				error_num(char *str);
+int				error_num(void);
 #endif

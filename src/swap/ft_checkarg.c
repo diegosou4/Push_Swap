@@ -54,7 +54,7 @@ int	check_num(char **num, int index)
 		while (num[index][j])
 		{
 			if (ft_isdigit(num[index][j]) == 0)
-				return (error_num("Error"));
+				return (error_num());
 			j++;
 		}
 		index++;

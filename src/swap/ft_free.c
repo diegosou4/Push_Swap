@@ -76,6 +76,6 @@ void	free_pivot(t_node *pivot)
 void	free_nvalues(char *curr)
 {
 	free(curr);
-	ft_printf("Error\n");
+	write(2, "Error\n", 6);
 	exit(0);
 }

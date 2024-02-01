@@ -37,7 +37,7 @@ all: $(NAME)
 
 $(NAME): $(OBJ)
 	@echo "$(BOLD)$(BLUE)$(NAME) has been compiled successfully!$(RESET)"
-	@${CC} -g push_swap.c ${OBJ} -o $(NAME)
+	${CC} ${CFLAGS} -g push_swap.c ${OBJ} -o $(NAME)
 
 $(SRCOBJ)%.o: src/%.c
 	@mkdir -p $(dir $@)
