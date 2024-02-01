@@ -21,7 +21,7 @@ LIBFT_SRC = ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c ft_isprint.c ft_
 SWAP_SRC = ft_checkarg.c ft_createstruct.c ft_free.c ft_utils.c \
       ft_checknum.c ft_pushswap.c ft_comands.c my_sort.c \
       ft_do1.c ft_do.c ft_quicksort.c ft_quicksort2.c \
-      ft_quickutils.c ft_quickutils2.c
+      ft_quickutils.c ft_quickutils2.c ft_swap.c
 
 SRC = $(addprefix ./src/ext/, $(LIBFT_SRC)) \
       $(addprefix ./src/swap/, $(SWAP_SRC))
