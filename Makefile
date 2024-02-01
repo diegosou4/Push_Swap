@@ -1,5 +1,10 @@
 NAME = push_swap
 
+BOLD = \033[1m
+RESET = \033[0m
+BLUE = \033[34m
+RED = \033[31m
+
 LIBFT_SRC = ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c ft_isprint.c ft_strlen.c \
       ft_memset.c ft_strlcpy.c ft_memmove.c ft_strlcat.c ft_toupper.c ft_tolower.c \
       ft_strchr.c ft_strrchr.c ft_strncmp.c ft_memchr.c ft_strnstr.c ft_memcpy.c \
@@ -18,31 +23,31 @@ SWAP_SRC = ft_checkarg.c ft_createstruct.c ft_free.c ft_utils.c \
       ft_do1.c ft_do.c ft_quicksort.c ft_quicksort2.c \
       ft_quickutils.c ft_quickutils2.c
 
-PREFIX_LIB = src/ext/
-PREFIX_SRC = src/
+SRC = $(addprefix ./src/ext/, $(LIBFT_SRC)) \
+      $(addprefix ./src/swap/, $(SWAP_SRC))
+
+
+SRCOBJ = obj/
 CC = cc
 CFLAGS = -Wall -Wextra -Werror
 
-LIBFT = $(addprefix $(PREFIX_LIB), $(LIBFT_SRC))
-SRC = $(addprefix $(PREFIX_SRC), $(SWAP_SRC))
-SRCOBJ = obj/
-
-OBJ = $(addprefix $(SRCOBJ)/, $(SWAP_SRC:%.c=%.o))
-
+OBJ = $(addprefix $(SRCOBJ), $(SRC:./src/%.c=%.o))
 
 all: $(NAME)
 
 $(NAME): $(OBJ)
-	${CC} ${CFLAGS} -g main.c ${OBJ} ${LIBFT} -o $(NAME)
+	@echo "$(BOLD)$(BLUE)$(NAME) has been compiled successfully!$(RESET)"
+	@${CC} ${CFLAGS} -g push_swap.c ${OBJ} -o $(NAME)
 
 $(SRCOBJ)%.o: src/%.c
 	@mkdir -p $(dir $@)
-	${CC} ${CFLAGS} -c $< -o $@
+	@${CC} ${CFLAGS} -c $< -o $@
 
 clean:
-	rm -rf $(SRCOBJ)
+	@echo "$(BOLD)$(RED)Cleaning up objects files!$(RESET)"
+	@rm -rf $(SRCOBJ)
 
 fclean: clean
-	rm -f $(NAME)
+	@rm -f $(NAME)
 
 re: fclean all
