@@ -48,7 +48,6 @@ int last_number(t_node **stacka)
 }
 int my_sort(t_node **stacka, t_node **stackb,t_node **stackc)
 {
-    t_node *p;
     int tamlst;
 
     tamlst = ft_nodesize(stacka);

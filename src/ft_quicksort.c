@@ -58,12 +58,10 @@ void findindex(t_node **stack, int pivot)
 {
     int indexa;     
     int indexb;
-    int nodesize;
     indexa = find_indexa(stack,pivot,ft_nodesize(stack)) + 1; 
     indexb = find_indexb(stack,pivot,ft_nodesize(stack)) + 1; 
     t_node *ptr;
     ptr = (*stack);
-    int havemin1 = havemin(stack,pivot);
     if(indexa < indexb || indexa == indexb)
     {
         while(indexa != 0)
@@ -132,7 +130,7 @@ int sort_c(t_node **stackc, t_node **stackd)
     
     return(1);
 }
-void tempsort(t_node **stacka,t_node **stackc)
+void tempsort(t_node **stackc)
 {
     t_node *stackd;
     stackd = NULL;
@@ -194,7 +192,7 @@ t_node *stackpivot(t_node **stackc)
 
 void firstsetp(t_node **stacka,t_node **stackb, t_node **stackc)
 {
-    tempsort(stacka,stackc);
+    tempsort(stackc);
     t_node *pivot;
     pivot = stackpivot(stackc);
     t_node *ptr;

@@ -20,7 +20,6 @@ int swap(t_node **stack)
 
 int push(t_node **dest, t_node **src)
 {
-    int temp;
     t_node *node_to_push;
 
     node_to_push = *src;

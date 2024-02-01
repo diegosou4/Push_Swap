@@ -48,14 +48,15 @@ int	check_arg(int ac, char **av, t_node **stacka,t_node **stackc)
 {
 	if (ac == 2)
 	{
-		value_arr(ac,av,stacka,stackc);
+		value_arr(av,stacka,stackc);
 		return (1);
 	}
 	if (ac > 2)
 	{
-		value_av(ac,av,stacka,stackc);
+		value_av(av,stacka,stackc);
 		return (2);
 	}
+	ac = 1;
 	return (0);
 }
 int	check_num(char **num, int index)
@@ -75,7 +76,7 @@ int	check_num(char **num, int index)
 	return (1);
 }
 
-int	value_av(int ac, char **av, t_node **stacka, t_node **stackc)
+void value_av(char **av, t_node **stacka, t_node **stackc)
 {
 	if (check_num(av,1) == 0 || check_duplicates(av,1) == 0 || check_nvalues(av,1) == 0)
 	{
@@ -84,8 +85,7 @@ int	value_av(int ac, char **av, t_node **stacka, t_node **stackc)
     *stacka = create_stack(av,1);
 	*stackc = create_stack(av,1);
 }
-
-int value_arr(int ac,char **av, t_node **stacka, t_node **stackc)
+void value_arr(char **av, t_node **stacka, t_node **stackc)
 {
 	char **num;
 	num = ft_split(av[1], ' ');

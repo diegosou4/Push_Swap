@@ -68,31 +68,6 @@ int findbigproxfinal(t_node **stack,int numstackb)
     }
     return(i);
 }
-void moveprox(t_node **stack,int num)
-{
-    int indexa;
-    int indexb;
 
-    indexa = findbigproxstart(stack,num);
-    indexb = findbigproxfinal(stack,num);
-    printf("%i indexa \n", indexa);
-    printf("%i indexa \n", indexb);
-    if(indexa < indexb || indexa == indexb)
-    {
-        while(indexa != 0)
-        {
-            rchoose(stack,2);
-            indexa--;
-        }
-    }else if(indexb < indexa)
-    {
-        while(indexb != 0)
-        {
-            rrchoose(stack,2);
-            indexb--;
-        }
-    }
-
-}
 
 
