@@ -64,7 +64,6 @@ int	check_num(char **num, int index)
 
 void	value_av(char **av, t_node **stacka, t_node **stackc)
 {
-
 	if (check_num(av, 1) == 0 || check_duplicates(av, 1) == 0
 		|| check_nvalues(av, 1) == 0)
 	{
@@ -72,7 +71,6 @@ void	value_av(char **av, t_node **stacka, t_node **stackc)
 	}
 	*stacka = create_stack(av, 1);
 	*stackc = create_stack(av, 1);
-
 }
 
 void	value_arr(char **av, t_node **stacka, t_node **stackc)

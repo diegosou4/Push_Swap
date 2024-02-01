@@ -62,17 +62,14 @@ int	check_nvalues(char **num, int index)
 		value = ft_atoi(num[index]);
 		curr = ft_itoa(value);
 		if (value < INT_MIN || value > INT_MAX)
+			free_nvalues(curr);
+		if (num[index][0] == '+')
 		{
-			free(curr);
-			ft_printf("Error \n");
-			return (0);
+			if (ft_strncmp(&num[index][1], curr, ft_strlen(num[index]) - 1))
+				free_nvalues(curr);
 		}
-		if (ft_strncmp(num[index], curr, ft_strlen(num[index])))
-		{
-			free(curr);
-			ft_printf("Error \n");
-			return (0);
-		}
+		else if (ft_strncmp(num[index], curr, ft_strlen(num[index])))
+			free_nvalues(curr);
 		free(curr);
 		index++;
 	}

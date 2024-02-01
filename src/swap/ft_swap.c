@@ -6,30 +6,28 @@
 /*   By: diegmore <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/01 15:03:40 by diegmore          #+#    #+#             */
-/*   Updated: 2024/02/01 15:03:41 by diegmore         ###   ########.fr       */
+/*   Updated: 2024/02/01 16:20:26 by diegmore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../push_swap.h"
 
-
-void freetwo(t_node **stacka, t_node **stackc)
+void	freetwo(t_node **stacka, t_node **stackc)
 {
-    free(stacka);
-    free(stackc);
-    exit(0);
+	free_stack(stacka);
+	free_stack(stackc);
+	exit(0);
 }
 
-void ft_swap(t_node **stacka, t_node **stackc)
+void	ft_swap(t_node **stacka, t_node **stackc)
 {
-    t_node *ptr;
+	t_node	*ptr;
 
-    ptr = (*stacka)->next;
-
-    if((*stacka)->num > ptr->num)
-    {
-        swap(stacka);
-        ft_printf("sa\n");
-    }
-    freetwo(stacka,stackc);
+	ptr = (*stacka)->next;
+	if ((*stacka)->num > ptr->num)
+	{
+		swap(stacka);
+		ft_printf("sa\n");
+	}
+	freetwo(stacka, stackc);
 }

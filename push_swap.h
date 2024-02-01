@@ -42,7 +42,7 @@ int				check_nvalues(char **num, int index);
 int				check_num(char **num, int index);
 
 // COMANDS
-void ft_swap(t_node **stacka, t_node **stackc);
+void			ft_swap(t_node **stacka, t_node **stackc);
 int				swap(t_node **stack);
 int				push(t_node **dest, t_node **src);
 int				rotate(t_node **stack);
@@ -71,8 +71,9 @@ int				find_min(t_node **stacka, int nodesize);
 void			putinb(t_node **stacka, t_node **stackb, int size);
 
 // FREE
+void			free_nvalues(char *curr);
 void			free_stack(t_node **stack);
-void freetwo(t_node **stacka, t_node **stackc);
+void			freetwo(t_node **stacka, t_node **stackc);
 void			free_pivot(t_node *pivot);
 void			free_array(char **num);
 t_node			*find_last(t_node *stack);

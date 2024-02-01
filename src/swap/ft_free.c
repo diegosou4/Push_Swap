@@ -6,7 +6,7 @@
 /*   By: diegmore <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/09 16:29:30 by diegmore          #+#    #+#             */
-/*   Updated: 2024/02/01 11:58:51 by diegmore         ###   ########.fr       */
+/*   Updated: 2024/02/01 16:19:36 by diegmore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,4 +71,11 @@ void	free_pivot(t_node *pivot)
 		ptr = prev;
 	}
 	pivot = NULL;
+}
+
+void	free_nvalues(char *curr)
+{
+	free(curr);
+	ft_printf("Error\n");
+	exit(0);
 }

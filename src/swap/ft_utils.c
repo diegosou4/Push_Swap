@@ -71,5 +71,5 @@ int	ft_nodesize(t_node **stack)
 int	error_num(char *str)
 {
 	ft_printf("%s\n", str);
-	return(0);
+	return (0);
 }

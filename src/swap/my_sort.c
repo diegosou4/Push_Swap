@@ -59,20 +59,20 @@ int	my_sort(t_node **stacka, t_node **stackb, t_node **stackc)
 	int	tamlst;
 
 	tamlst = ft_nodesize(stacka);
-	if(tamlst == 2)
-		ft_swap(stacka,stackc);
+	if (tamlst == 2)
+		ft_swap(stacka, stackc);
 	if (tamlst == 3)
 		case3(stacka);
 	else if (tamlst == 5)
 		case5(stacka, stackb);
 	if (is_sorted(stacka) == 1)
-		freetwo(stacka,stackc);
+		freetwo(stacka, stackc);
 	else
 	{
 		while (is_sorted(stacka) != 1)
 			quicksort(stacka, stackb, stackc);
 		if (is_sorted(stacka) == 1)
-			freetwo(stacka,stackc);
+			freetwo(stacka, stackc);
 	}
 	return (0);
 }
