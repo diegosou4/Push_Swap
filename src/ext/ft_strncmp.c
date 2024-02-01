@@ -1,35 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_issorted.c                                      :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: diegmore <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/18 15:01:25 by diegmore          #+#    #+#             */
-/*   Updated: 2024/01/18 15:01:26 by diegmore         ###   ########.fr       */
+/*   Created: 2023/10/05 13:49:17 by diegmore          #+#    #+#             */
+/*   Updated: 2024/02/01 11:55:03 by diegmore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 
-#include "../push_swap.h"
-
-
-int is_sorted(t_node **stacka)
+int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-    t_node *p;
-    p = (*stacka);
-    while(p->next)
-    {
-        t_node *ptr;
-        ptr = p->next;
-        while(ptr)
-        {
-            if(p->num > ptr->num)
-                return(0);
-            else
-                ptr = ptr->next;
-        }
-        p = p->next;
-    }
-    return(1);
+	size_t	i;
+
+	i = 0;
+	if (n == 0)
+		return (0);
+	while ((i < n - 1) && (*(const unsigned char *)(s1
+			+ i) == *(const unsigned char *)(s2 + i))
+		&& *(const unsigned char *)(s1 + i) && *(const unsigned char *)(s2 + i))
+	{
+		i++;
+	}
+	return ((*(const unsigned char *)(s1 + i) - *(const unsigned char *)(s2
+		+ i)));
 }

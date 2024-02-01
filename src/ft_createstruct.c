@@ -40,19 +40,18 @@ void	add_back(t_node **node, int num)
 	pnode->next = last;
 }
 
-
-
-t_node *create_stack(char **num, int index)
+t_node	*create_stack(char **num, int index)
 {
-    int lenarr;
-    lenarr = len_darray(num);
-    t_node *stacka;
-    stacka = new_node(ft_atoi(num[index]));
-    index++;
-    while(index != lenarr)
-    {
-        add_back(&stacka,ft_atoi(num[index]));
-        index++;
-    }
-    return(stacka);
+	int		lenarr;
+	t_node	*stacka;
+
+	lenarr = len_darray(num);
+	stacka = new_node(ft_atoi(num[index]));
+	index++;
+	while (index != lenarr)
+	{
+		add_back(&stacka, ft_atoi(num[index]));
+		index++;
+	}
+	return (stacka);
 }

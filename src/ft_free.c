@@ -6,7 +6,7 @@
 /*   By: diegmore <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/09 16:29:30 by diegmore          #+#    #+#             */
-/*   Updated: 2024/01/09 16:31:16 by diegmore         ###   ########.fr       */
+/*   Updated: 2024/02/01 11:58:51 by diegmore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,35 +43,32 @@ void	free_array(char **num)
 	free(num);
 }
 
-void	*return_free(char **num, void *type)
+void	free_stack(t_node **stack)
 {
-	free_array(num);
-	return (type);
-}
+	t_node	*p;
+	t_node	*prev;
 
-void free_stack(t_node **stack)
-{
-	t_node *p;
 	p = find_last((*stack));
-    while(p != NULL)
-    {
-        t_node *prev;
-        prev = p->previous;
-        free(p);
-        p = prev;
-    }
+	while (p != NULL)
+	{
+		prev = p->previous;
+		free(p);
+		p = prev;
+	}
 	(*stack) = NULL;
 }
-void free_pivot(t_node *pivot)
+
+void	free_pivot(t_node *pivot)
 {
-	t_node *ptr;
+	t_node	*ptr;
+	t_node	*prev;
+
 	ptr = find_last(pivot);
-    while(ptr != NULL)
-    {
-        t_node *prev;
-        prev = ptr->previous;
-        free(ptr);
-        ptr = prev;
-    }
-    pivot = NULL;
+	while (ptr != NULL)
+	{
+		prev = ptr->previous;
+		free(ptr);
+		ptr = prev;
+	}
+	pivot = NULL;
 }

@@ -10,64 +10,59 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-
 #include "../push_swap.h"
 
-
-int findbigproxstart(t_node **stack, int numstackb)
+int	findbigproxstart(t_node **stack, int numstackb)
 {
-    int num;
-    int index;
-    t_node *ptr;
-    ptr = (*stack);
-    int i;
-    i = 0;
-    index = 0;
-    num = ptr->num;
+	int		num;
+	int		index;
+	t_node	*ptr;
+	int		i;
 
-    while(ptr != NULL)
-    {
-        if(num <= ptr->num)
-        {
-            num = ptr->num;
-            if(index < (ptr->num - numstackb))
-            {
-                i++;
-                index = ptr->num - numstackb;
-            }
-        }
-        ptr = ptr->next;
-    }
-    return(i);
+	ptr = (*stack);
+	i = 0;
+	index = 0;
+	num = ptr->num;
+	while (ptr != NULL)
+	{
+		if (num <= ptr->num)
+		{
+			num = ptr->num;
+			if (index < (ptr->num - numstackb))
+			{
+				i++;
+				index = ptr->num - numstackb;
+			}
+		}
+		ptr = ptr->next;
+	}
+	return (i);
 }
 
-int findbigproxfinal(t_node **stack,int numstackb)
+int	findbigproxfinal(t_node **stack, int numstackb)
 {
-    int num;
-    int index;
-    t_node *ptr;
-    ptr = (*stack);
-    ptr = find_last(ptr);
-    int i;
-    i = 0;
-    index = 0;
-    num = ptr->num;
+	int		num;
+	int		index;
+	t_node	*ptr;
+	int		i;
 
-    while(ptr != NULL)
-    {
-        if(num <= ptr->num)
-        {
-            num = ptr->num;
-            if(index < (ptr->num - numstackb))
-            {
-                i++;
-                index = ptr->num - numstackb;
-            }
-        }
-        ptr = ptr->previous;
-    }
-    return(i);
+	ptr = (*stack);
+	ptr = find_last(ptr);
+	i = 0;
+	index = 0;
+	num = ptr->num;
+	while (ptr != NULL)
+	{
+		if (num <= ptr->num)
+		{
+			num = ptr->num;
+			if (index < (ptr->num - numstackb))
+			{
+				i++;
+				index = ptr->num - numstackb;
+			}
+		}
+		ptr = ptr->previous;
+	}
+	return (i);
 }
-
-
-

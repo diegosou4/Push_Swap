@@ -1,19 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_msgerror.c                                      :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: diegmore <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/09 14:42:15 by diegmore          #+#    #+#             */
-/*   Updated: 2024/01/09 14:42:36 by diegmore         ###   ########.fr       */
+/*   Created: 2023/10/04 14:02:04 by diegmore          #+#    #+#             */
+/*   Updated: 2023/10/04 14:02:57 by diegmore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "libft.h"
 
-int	error_num(char *str)
+void	*ft_memchr(const void *str, int c, size_t n)
 {
-	ft_printf("%s\n", str);
-	exit(0);
+	size_t	i;
+
+	i = 0;
+	while (i < n)
+	{
+		if (*(unsigned char *)(str + i) == (unsigned char)c)
+			return ((void *)(str + i));
+		i++;
+	}
+	return (NULL);
 }
